@@ -8,8 +8,11 @@ void mostrarMatriz(char matriz[N][N])
     // TODO: completar esta función para mostrar la matriz en pantalla
     for(int i = 0; i < N ; i++)
     {
-        for(int j = 0; ){}
-
+        for(int j = 0; j < N ; j++)
+        {
+            cout<<matriz[i][j];
+        }
+        cout<<endl;
     }
 }
 
