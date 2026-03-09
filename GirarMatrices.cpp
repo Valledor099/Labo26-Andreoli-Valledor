@@ -19,14 +19,18 @@ void mostrarMatriz(char matriz[N][N])
 void girarDerecha(char origen[N][N], char destino[N][N])
 {
     // TODO: completar esta función para girar la matriz 90 grados a la derecha
-    char figura;
+
+     // [1,1] [1,3] [3,3] [3,1]
     for(int i = 0; i<N; i++)
     {
         for(int j = 0; j<N; j++)
         {
-            
+            destino[j][N-1-i] = origen[i][j];
         }
     }
+
+    
+
 }
 
 void limpiarPantalla()
@@ -39,6 +43,7 @@ void limpiarPantalla()
 
 int main()
 {
+    
     char matriz[N][N] = {
         {'.', '.', '#', '.', '.'},
         {'.', '#', '#', '#', '.'},
@@ -63,3 +68,4 @@ int main()
 
     return 0;
 }
+
