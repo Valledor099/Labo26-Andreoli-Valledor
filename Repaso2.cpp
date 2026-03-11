@@ -179,7 +179,7 @@ int cont=0;
 
 
     cout << "Columna con producto de mayor precio: " << columna_producto_mayor_precio<<endl;
-    cout << "Producto de la fila 2 columna 3: "<<gondola[2][3].nombre <<endl;
+    cout << "Producto de la fila 2 columna 3: "<<gondola[1][2].nombre <<endl;
     cout << "Promedio de precios de todo el pasillo: " << promedio << endl;
     cout << "Cantidad de productos con fecha de vencimiento: " << cont <<endl;
 
