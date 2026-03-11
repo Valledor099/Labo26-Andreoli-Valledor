@@ -2,6 +2,9 @@
 #include <vector>
 using namespace std;
 
+const int F = 3;
+const int C = 4;
+
 struct productos_t{
 string nombre;
 string codigo_de_barra;
@@ -10,24 +13,10 @@ int precio;
 bool fecha_de_vencimiento;
 };
 
-
-
-
-
-
-
-
-int main (){
-productos_t producto;
-productos_t gondola[3][4];
-int maxp = 0;
-int columna_producto_mayor_precio;
-int precios = 0;
-int promedio = 0;
-int cont=0;
-
-
-producto.nombre = "fideos";
+void cargarGondola(productos_t gondola[F][C])
+{
+    productos_t producto;
+    producto.nombre = "fideos";
 producto.codigo_de_barra = "123214-12321421";
 producto.marca = "Don Vicente";
 producto.precio = 1500;
@@ -112,30 +101,82 @@ producto.marca = "Vanella";
 producto.precio = 980;
 producto.fecha_de_vencimiento = true;
 gondola[2][3] = producto;
+}
 
 
-for (int i = 0; i < 3 ; i++) 
+void maxPrecio(int &columna_producto_mayor_precio,productos_t gondola[F][C])
 {
-    for(int j = 0; j < 4; j++)
+    int maxp=0;
+    for (int i = 0; i < 3 ; i++) 
     {
-        if(maxp < gondola[i][j].precio)
+        for(int j = 0; j < 4; j++)
         {
-          maxp = gondola[i][j].precio;
-          columna_producto_mayor_precio = j;
-        }
+            if(maxp < gondola[i][j].precio)
+            {
+                maxp = gondola[i][j].precio;
+                columna_producto_mayor_precio = j;
+            }
 
-        if(gondola[i][j].fecha_de_vencimiento == true)
-        {
-            cont++;
-        }
+       
 
-        precios+= gondola[i][j].precio;
+     
+
+        }
 
     }
 
 }
 
-    promedio = precios / 12;
+
+void prom(int &promedio,productos_t gondola[F][C])
+{
+    int precios = 0;
+    for (int i = 0; i < 3 ; i++) 
+    {
+        for(int j = 0; j < 4; j++)
+        {
+         precios+= gondola[i][j].precio;
+        }
+    }
+
+promedio = precios / 12;
+}
+
+void fecha(int &cont,productos_t gondola[F][C]){
+    for (int i = 0; i < 3 ; i++) 
+    {
+        for(int j = 0; j < 4; j++)
+        {
+            if(gondola[i][j].fecha_de_vencimiento == true)
+            {
+            cont++;
+            }
+
+
+        }
+
+    }
+
+}
+
+
+
+int main (){
+
+productos_t gondola[F][C];
+int columna_producto_mayor_precio;
+int promedio = 0;
+int cont=0;
+
+
+    cargarGondola(gondola);
+
+    maxPrecio(columna_producto_mayor_precio,gondola);
+
+    prom(promedio,gondola);
+
+    fecha(cont,gondola);
+
 
     cout << "Columna con producto de mayor precio: " << columna_producto_mayor_precio<<endl;
     cout << "Producto de la fila 2 columna 3: "<<gondola[2][3].nombre <<endl;

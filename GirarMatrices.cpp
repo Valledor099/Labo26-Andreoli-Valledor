@@ -29,7 +29,13 @@ void girarDerecha(char origen[N][N], char destino[N][N])
         }
     }
 
-    
+    for(int i = 0; i<N; i++)
+    {
+        for(int j = 0; j<N; j++)
+        {
+            origen[i][j] =destino[i][j] ;
+        }
+    }
 
 }
 
