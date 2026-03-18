@@ -7,6 +7,7 @@ public class DiaLaboral {
         System.out.println("ingrese un dia de la semana y le diremos si es laboral: ");
         Scanner scanner = new Scanner(System.in);
         String dia = scanner.next();
+        dia = dia.toLowerCase();
 
         if(dia.equals("sabado") || dia.equals("domingo"))
         {
