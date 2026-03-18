@@ -7,7 +7,7 @@ public class IntroducirNumeros {
     {
         int positivos = 0, aux = 0;
 
-        if (aux < num) {
+        if (num < aux) {
             positivos += num;
         }
 
@@ -19,7 +19,7 @@ public class IntroducirNumeros {
         System.out.println("Ingrese un numero, -1 para salir");
         int n = scanner.nextInt() , cont= 0, max = 0, min = 0, total=0;
         int sumPositivos = 0;
-        int negativos = 0;
+        int negativos = 0 , aux = 0;
 
         while(n != -1)
         {
@@ -39,6 +39,7 @@ public class IntroducirNumeros {
             }
 
             sumPositivos = positive(n);
+            
 
         }
 
