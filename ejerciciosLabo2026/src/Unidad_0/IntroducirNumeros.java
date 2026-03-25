@@ -7,7 +7,7 @@ public class IntroducirNumeros {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Ingrese un numero, -1 para salir");
         int n = scanner.nextInt() , cont= 0, max = 0, min = 0, total=0;
-        int negativos = 0 , aux = 0, positivos = 0;;
+        int negativos = 0 , aux = 0, positivos = 0;
 
         while(n != -1)
         {

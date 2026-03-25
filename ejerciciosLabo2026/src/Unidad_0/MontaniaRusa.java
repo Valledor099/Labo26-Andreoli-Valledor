@@ -16,7 +16,15 @@ public class MontaniaRusa {
 
         while(altura != 0)
         {
+            if(altura < 1.40)
+            {
+            System.out.println("Ingreso un enano, debe ser retirado");
+            }
+
+            else {
             personas.add(altura);
+            }
+
             System.out.println("Ahora ingrese otra altura: ");
             altura = scanner.nextFloat();
         }
@@ -25,11 +33,6 @@ public class MontaniaRusa {
         {
             cont++;
             altTotal += personas.get(i);
-
-            if(personas.get(i) < 1.40)
-            {
-                System.out.println("Ingreso un enano, debe ser retirado");
-            }
         }
 
         altProm = altTotal / cont;
