@@ -52,9 +52,11 @@ public class Coche {
     public static void main(String[] args) {
         Coche coche = new Coche("lamborghini","Urus", "gris");
         System.out.println("marca, modelo, color: " + coche.getMarca() + " "+ coche.getModelo()+ " " + coche.getColor());
+
         coche.setMarca("Porsche");
         coche.setModelo("911 gt-rs 3");
         coche.setColor("Negro");
+
         System.out.println("marca, modelo, color: " + coche.getMarca() + " "+ coche.getModelo() +" "+ coche.getColor());
         coche.acelerar();
         System.out.println(coche.mostrarVelocidad());
