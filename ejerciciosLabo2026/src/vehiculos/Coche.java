@@ -1,4 +1,4 @@
-package Unidad_0;
+package vehiculos;
 
 public class Coche {
     private String marca;
