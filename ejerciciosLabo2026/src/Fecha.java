@@ -7,14 +7,13 @@ public class Fecha {
     private int mes;
     private int anio;
 
-    public Fecha(){
+    public Fecha() {
         this.dia = 01;
         this.mes = 01;
         this.anio = 2000;
     }
 
-    public Fecha(int dia, int mes, int anio)
-    {
+    public Fecha(int dia, int mes, int anio) {
         this.dia = dia;
         this.mes = mes;
         this.anio = anio;
@@ -44,86 +43,71 @@ public class Fecha {
         return mes;
     }
 
-    public void valida()
-    {
+    public void valida() {
 
-        if(anio > 2026){
+        if (anio > 2026) {
             anio = 1900;
         }
 
 
-
-
         switch (mes) {
             case 1:
-                if (dia > 31 || dia < 1)
-                {
+                if (dia > 31 || dia < 1) {
                     dia = 1;
                 }
                 break;
             case 2:
-                if(dia >28 || dia < 1)
-                {
+                if (dia > 28 || dia < 1) {
                     dia = 1;
                 }
                 break;
             case 3:
-                if(dia > 31 || dia < 1)
-                {
+                if (dia > 31 || dia < 1) {
                     dia = 1;
                 }
                 break;
             case 4:
-                if(dia > 30 || dia < 1)
-                {
+                if (dia > 30 || dia < 1) {
                     dia = 1;
                 }
                 break;
             case 5:
-                if(dia > 31 || dia < 1)
-                {
+                if (dia > 31 || dia < 1) {
                     dia = 1;
                 }
                 break;
             case 6:
-                if(dia > 30 || dia < 1)
-                {
+                if (dia > 30 || dia < 1) {
                     dia = 1;
                 }
                 break;
             case 7:
-                if(dia > 31 || dia < 1)
-                {
+                if (dia > 31 || dia < 1) {
                     dia = 1;
                 }
                 break;
             case 8:
-                if(dia > 31 || dia < 1)
-                {
+                if (dia > 31 || dia < 1) {
                     dia = 1;
                 }
                 break;
             case 9:
-                if(dia > 30 || dia < 1)
-                {
+                if (dia > 30 || dia < 1) {
                     dia = 1;
                 }
                 break;
             case 10:
-                if(dia > 31 || dia < 1)
-                {
+                if (dia > 31 || dia < 1) {
                     dia = 1;
                 }
                 break;
             case 11:
-                if(dia > 30 || dia < 1)
-                {
+                if (dia > 30 || dia < 1) {
                     dia = 1;
                 }
                 break;
             case 12:
-                if(dia > 31 || dia < 1)
-                {
+                if (dia > 31 || dia < 1) {
                     dia = 1;
                 }
                 break;
@@ -136,10 +120,10 @@ public class Fecha {
         int dias = 1;
         switch (mes) {
             case 1:
-              dias = 31;
+                dias = 31;
                 break;
             case 2:
-               dias = 28;
+                dias = 28;
                 break;
             case 3:
                 dias = 31;
@@ -177,26 +161,35 @@ public class Fecha {
         return dias;
     }
 
-    public void corta(){
-        System.out.println(dia+"-"+mes+"-"+anio);
+    public void corta() {
+        System.out.println(dia + "-" + mes + "-" + anio);
     }
 
-    public void larga(){
-        LocalDate fecha= LocalDate.of(anio,mes,dia);
+    public void larga() {
+        LocalDate fecha = LocalDate.of(anio, mes, dia);
         DayOfWeek diaSemana = fecha.getDayOfWeek();
         YearMonth ym = YearMonth.of(anio, mes);
-        System.out.println(diaSemana+" "+dia+" "+ym);
+        System.out.println(diaSemana + " " + dia + " " + ym);
     }
 
-    public void siguiente(){
-        LocalDate fecha= LocalDate.of(anio,mes,dia);
+    public void siguiente() {
+        LocalDate fecha = LocalDate.of(anio, mes, dia);
         LocalDate maniana = fecha.plusDays(1);
         anio = maniana.getYear();
         mes = maniana.getMonthValue();
         dia = maniana.getDayOfMonth();
     }
 
-    public void anterior(){}
+    public void anterior() {
+        LocalDate fecha = LocalDate.of(anio, mes, dia);
+        LocalDate ayer = fecha.minusDays(1);
+        anio = ayer.getYear();
+        mes = ayer.getMonthValue();
+        dia = ayer.getDayOfMonth();
+    }
+    public void igualQue(Fecha fecha){
+        
+    }
 
 
 
