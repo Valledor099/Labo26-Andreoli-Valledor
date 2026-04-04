@@ -8,8 +8,8 @@ public class Fecha {
     private int anio;
 
     public Fecha() {
-        this.dia = 01;
-        this.mes = 01;
+        this.dia = 1;
+        this.mes = 1;
         this.anio = 2000;
     }
 
@@ -17,6 +17,7 @@ public class Fecha {
         this.dia = dia;
         this.mes = mes;
         this.anio = anio;
+        this.valida(anio,mes,dia);
     }
 
     public void setDia(int dia) {
@@ -43,77 +44,16 @@ public class Fecha {
         return mes;
     }
 
-    public void valida() {
+    public void valida(int anio,int mes, int dia) {
 
-        if (anio > 2026) {
-            anio = 1900;
+        try {
+            LocalDate.of(anio, mes, dia);
+        }catch (java.time.DateTimeException e){
+            this.dia = 1;
+            this.mes = 1;
+            this.anio = 1900;
         }
 
-
-        switch (mes) {
-            case 1:
-                if (dia > 31 || dia < 1) {
-                    dia = 1;
-                }
-                break;
-            case 2:
-                if (dia > 28 || dia < 1) {
-                    dia = 1;
-                }
-                break;
-            case 3:
-                if (dia > 31 || dia < 1) {
-                    dia = 1;
-                }
-                break;
-            case 4:
-                if (dia > 30 || dia < 1) {
-                    dia = 1;
-                }
-                break;
-            case 5:
-                if (dia > 31 || dia < 1) {
-                    dia = 1;
-                }
-                break;
-            case 6:
-                if (dia > 30 || dia < 1) {
-                    dia = 1;
-                }
-                break;
-            case 7:
-                if (dia > 31 || dia < 1) {
-                    dia = 1;
-                }
-                break;
-            case 8:
-                if (dia > 31 || dia < 1) {
-                    dia = 1;
-                }
-                break;
-            case 9:
-                if (dia > 30 || dia < 1) {
-                    dia = 1;
-                }
-                break;
-            case 10:
-                if (dia > 31 || dia < 1) {
-                    dia = 1;
-                }
-                break;
-            case 11:
-                if (dia > 30 || dia < 1) {
-                    dia = 1;
-                }
-                break;
-            case 12:
-                if (dia > 31 || dia < 1) {
-                    dia = 1;
-                }
-                break;
-            default:
-                mes = 1;
-        }
     }
 
     public int diasMes(int mes) {
@@ -187,10 +127,84 @@ public class Fecha {
         mes = ayer.getMonthValue();
         dia = ayer.getDayOfMonth();
     }
-    public void igualQue(Fecha fecha){
-        
+
+    public boolean igualQue(Fecha fecha){
+        boolean esIgual;
+        if (dia == fecha.getDia() && mes == fecha.getMes() && anio == fecha.getAnio()){
+            esIgual = true;
+        }
+        else {
+            esIgual = false;
+        }
+
+
+        return esIgual;
     }
 
+    public boolean menorQue(Fecha fecha){
+    boolean esMenor;
 
+        if (anio < fecha.getAnio())
+        {
+            esMenor = true;
+        }
+        else if(mes < fecha.getMes() && anio == fecha.getAnio()){
+            esMenor = true;
+        }
+        else if (dia < fecha.getDia() && mes == fecha.getMes() && anio == fecha.getAnio())
+        {
+            esMenor = true;
+        }
+        else {
+            esMenor = false;
+        }
+
+        return esMenor;
+    }
+
+    public boolean mayorQue(Fecha fecha){
+        boolean esMayor;
+
+        if (anio > fecha.getAnio())
+        {
+            esMayor = true;
+        }
+        else if(mes > fecha.getMes() && anio == fecha.getAnio()){
+            esMayor = true;
+        }
+        else if (dia > fecha.getDia() && mes == fecha.getMes() && anio == fecha.getAnio())
+        {
+            esMayor = true;
+        }
+        else {
+            esMayor = true;
+        }
+
+        return esMayor;
+
+    }
+
+    public static void main(String[] args) {
+        Fecha fecha = new Fecha();
+        Fecha fecha1 = new Fecha(99,10000,4123);
+
+        System.out.println("Fechas con getters");
+        System.out.println("Fecha: " + fecha.getDia() + fecha.getMes() + fecha.getAnio());
+        System.out.println("Fecha 1: " + fecha1.getDia() + fecha1.getMes() + fecha1.getAnio());
+
+        System.out.println("Numero de dias de agosto: " + fecha.diasMes(5));
+        System.out.println("fechas con metodos");
+        fecha.corta();
+        fecha1.larga();
+        fecha.siguiente();
+        fecha.corta();
+        fecha1.anterior();
+        fecha1.corta();
+        System.out.println(fecha.igualQue(fecha1));
+        System.out.println(fecha.menorQue(fecha1));
+        System.out.println(fecha.mayorQue(fecha1));
+
+
+    }
 
 }

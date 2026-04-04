@@ -35,15 +35,15 @@ public class Persona {
         this.edad = edad;
     }
 
-    public void mostrarDatos(Persona persona){
-        System.out.println(persona.nombre + " " + persona.edad + " " + persona.direccion);
+    public void mostrarDatos(){
+        System.out.println(nombre + " " + edad + " " + direccion);
     }
 
     public static void main(String[] args) {
         Persona persona = new Persona("RIKY",100,"Aizpurua 3399");
         System.out.println("Con sout y getters: " + persona.getNombre() + " " + persona.getEdad() + " " + persona.getDireccion());
         System.out.println("Con mostrarDatos: ");
-        persona.mostrarDatos(persona);
+        persona.mostrarDatos();
 
         persona.setNombre("aaa");
         persona.setEdad(23);
@@ -51,7 +51,7 @@ public class Persona {
 
         System.out.println("Con sout y getters despues del setter: " + persona.getNombre() + " " + persona.getEdad() + " " + persona.getDireccion());
         System.out.println("Con mostrarDatos despues del setter: ");
-        persona.mostrarDatos(persona);
+        persona.mostrarDatos();
 
 
 
