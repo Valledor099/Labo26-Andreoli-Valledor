@@ -1,3 +1,5 @@
+package cafeteras;
+
 public class Cafetera {
     private int cantidadMaxima;
     private int cantidadActual;
@@ -65,12 +67,12 @@ public class Cafetera {
     }
 
     public String toString() {
-        return "Cafetera [máximo: " + cantidadMaxima + " cc, actual: " + cantidadActual + " cc]";
+        return "cafeteras.Cafetera [máximo: " + cantidadMaxima + " cc, actual: " + cantidadActual + " cc]";
     }
 
     // Main para probar
     public static void main(String[] args) {
-        System.out.println("=== Prueba de Cafetera ===\n");
+        System.out.println("=== Prueba de cafeteras.Cafetera ===\n");
 
         // Constructor por defecto
         Cafetera c1 = new Cafetera();

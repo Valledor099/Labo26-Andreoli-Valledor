@@ -1,3 +1,5 @@
+package museos;
+
 import java.time.LocalDate;
 
 public class Museo {

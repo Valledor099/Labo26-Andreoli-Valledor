@@ -1,3 +1,5 @@
+package fechas;
+
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.YearMonth;
@@ -177,7 +179,7 @@ public class Fecha {
             esMayor = true;
         }
         else {
-            esMayor = true;
+            esMayor = false;
         }
 
         return esMayor;
@@ -189,8 +191,8 @@ public class Fecha {
         Fecha fecha1 = new Fecha(99,10000,4123);
 
         System.out.println("Fechas con getters");
-        System.out.println("Fecha: " + fecha.getDia() + fecha.getMes() + fecha.getAnio());
-        System.out.println("Fecha 1: " + fecha1.getDia() + fecha1.getMes() + fecha1.getAnio());
+        System.out.println("fecha.Fecha: " + fecha.getDia() + fecha.getMes() + fecha.getAnio());
+        System.out.println("fecha.Fecha 1: " + fecha1.getDia() + fecha1.getMes() + fecha1.getAnio());
 
         System.out.println("Numero de dias de agosto: " + fecha.diasMes(5));
         System.out.println("fechas con metodos");

@@ -1,3 +1,6 @@
+package libros;
+
+import fechas.Fecha;
 import humanos.Persona;
 
 public class Libro {
@@ -90,7 +93,7 @@ public class Libro {
         System.out.println("ISBN: " + isbn);
         System.out.println("Cant de Paginas: " + cantDePags);
         System.out.println("Editorial: " + editorial);
-        System.out.print("Fecha de Publicacion: ");
+        System.out.print("fecha.Fecha de Publicacion: ");
         fechaDePublicacion.corta();
     }
 
