@@ -1,0 +1,55 @@
+import humanos.Persona;
+
+import java.util.ArrayList;
+
+public class IntroduccionArrayLists {
+
+    public static void main(String[] args) {
+        ArrayList<Integer>numeros = new ArrayList<>();
+        ArrayList<String>palabras = new ArrayList<>();
+        ArrayList<Persona>personas = new ArrayList<>();
+
+        /*Ej 1.a*/
+        int suma = 0;
+        numeros.add(1);
+        numeros.add(2);
+        numeros.add(3);
+        numeros.add(4);
+        numeros.add(5);
+
+        for (int num : numeros){
+            suma += num;
+        }
+
+        System.out.println("Suma de todos los numeros: " + suma );
+
+        /*1.b*/
+        palabras.add("Choribondi");
+        palabras.add("Rempalago");
+        palabras.add("TortaFrita");
+        palabras.add("PerezElRaton");
+        palabras.add("Pepitos");
+
+        for (String palabra : palabras){
+            if (palabra.charAt(0) == 'P'){
+                System.out.println(palabra);
+            }
+        }
+
+        /*1.c*/
+        personas.add(new Persona("Ricqui",2,"Peru 535"));
+        personas.add(new Persona("Sezta",50,"Aizpurua 3377"));
+        personas.add(new Persona("Digiovanni",67,"Mosconi 6767"));
+        personas.add(new Persona("LetalForce",90,"Ladiness 2842"));
+        personas.add(new Persona("Papas",45,"Constituyentes 5880"));
+
+        System.out.println("Personas con mas de 30 años:");
+        for (Persona persona : personas){
+            if (persona.getEdad() > 30){
+
+                persona.mostrarDatos();
+            }
+        }
+
+    }
+}
