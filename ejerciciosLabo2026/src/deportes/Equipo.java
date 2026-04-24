@@ -3,11 +3,13 @@ package deportes;
 import java.util.ArrayList;
 
 public class Equipo {
+    private String nombre;
     private ArrayList<String> disponibilidad;
     private Jugador capitan;
     private ArrayList<Jugador> lista;
 
-    public Equipo(ArrayList<String> disponibilidad, Jugador capitan, ArrayList<Jugador> lista) {
+    public Equipo(String nombre ,ArrayList<String> disponibilidad, Jugador capitan, ArrayList<Jugador> lista) {
+        this.nombre = nombre;
         this.disponibilidad = disponibilidad;
         this.capitan = capitan;
         this.lista = lista;
@@ -35,6 +37,14 @@ public class Equipo {
 
     public void setLista(ArrayList<Jugador> lista) {
         this.lista = lista;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public void agregarJugador(Jugador jugador) {
