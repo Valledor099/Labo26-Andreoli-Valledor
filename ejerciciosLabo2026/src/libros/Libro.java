@@ -3,6 +3,8 @@ package libros;
 import fechas.Fecha;
 import humanos.Persona;
 
+import java.time.LocalDate;
+
 public class Libro {
     private String titulo;
     private Persona autor;
@@ -13,7 +15,7 @@ public class Libro {
 
     public Libro(){
         this.titulo = "Habitos Atomicos";
-        this.autor = new Persona("James Clear", 40, "Washington 1234");
+        this.autor = new Persona("James Clear", LocalDate.of(2000,10,10), "Washington 1234");
         this.isbn = "1234-321";
         this.cantDePags = 400;
         this.editorial = "Sudamericana";
@@ -108,9 +110,9 @@ public class Libro {
 
     public static void main(String[] args) {
         Libro libro = new Libro();
-        Persona autor = new Persona("Mujica Lainez",49,"dasdasd 1213");
+        Persona autor = new Persona("Mujica Lainez",LocalDate.of(1999,1,1),"dasdasd 1213");
         Libro libro1 = new Libro("aaa", autor, "123-123",302,"abbc", new Fecha());
-        Libro libro2 = new Libro("IT", new Persona("Stephen King",65,"New York 1232"),500,new Fecha(20,5,2009));
+        Libro libro2 = new Libro("IT", new Persona("Stephen King",LocalDate.of(2000,10,10),"New York 1232"),500,new Fecha(20,5,2009));
         System.out.println("Getters: " + libro.getTitulo() + libro.getEditorial() + libro.getIsbn() + libro.getAutor().getNombre() + libro.getCantDePags() + libro.getFechaDePublicacion().getDia() + libro.getFechaDePublicacion().getMes() + libro.getFechaDePublicacion().getAnio());
         libro1.setTitulo("Misteriosa Buenos Aires");
         System.out.println("Metodo de mostrar libro:");

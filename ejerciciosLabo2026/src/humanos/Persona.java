@@ -1,22 +1,31 @@
 package humanos;
 
+import java.time.LocalDate;
+
 public class Persona {
     private String nombre;
-    private int edad;
+    private String apellido;
+    private LocalDate fecha_de_nacimiento;
     private String direccion;
 
-    public Persona (String nombre, int edad, String direccion){
+    public Persona(String nombre, LocalDate fecha_de_nacimiento, String direccion) {
         this.nombre = nombre;
-        this.edad = edad;
+        this.fecha_de_nacimiento = fecha_de_nacimiento;
         this.direccion = direccion;
     }
 
-    public int getEdad() {
-        return edad;
+    public Persona(String nombre,String apellido ,LocalDate fecha_de_nacimiento){
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.fecha_de_nacimiento = fecha_de_nacimiento;
     }
 
-    public String getDireccion() {
-        return direccion;
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
     public String getNombre() {
@@ -27,29 +36,43 @@ public class Persona {
         this.nombre = nombre;
     }
 
+    public LocalDate getFecha_de_nacimiento() {
+        return fecha_de_nacimiento;
+    }
+
+    public void setFecha_de_nacimiento(LocalDate fecha_de_nacimiento) {
+        this.fecha_de_nacimiento = fecha_de_nacimiento;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
 
-    public void setEdad(int edad) {
-        this.edad = edad;
+    public int calcularEdad(){
+        int edad;
+        edad = LocalDate.now().getYear() - fecha_de_nacimiento.getYear();
+        return edad;
     }
 
     public void mostrarDatos(){
-        System.out.println(nombre + " " + edad + " " + direccion);
+        System.out.println(nombre + " " + fecha_de_nacimiento + " " + direccion);
     }
 
     public static void main(String[] args) {
-        Persona persona = new Persona("RIKY",100,"Aizpurua 3399");
-        System.out.println("Con sout y getters: " + persona.getNombre() + " " + persona.getEdad() + " " + persona.getDireccion());
+        Persona persona = new Persona("RIKY",LocalDate.of(2000,10,10),"Aizpurua 3399");
+        System.out.println("Con sout y getters: " + persona.getNombre() + " " + persona.getFecha_de_nacimiento() + " " + persona.getDireccion());
         System.out.println("Con mostrarDatos: ");
         persona.mostrarDatos();
 
         persona.setNombre("aaa");
-        persona.setEdad(23);
+        persona.setFecha_de_nacimiento(LocalDate.of(2000,10,10));
         persona.setDireccion("Ladines 2842");
 
-        System.out.println("Con sout y getters despues del setter: " + persona.getNombre() + " " + persona.getEdad() + " " + persona.getDireccion());
+        System.out.println("Con sout y getters despues del setter: " + persona.getNombre() + " " + persona.calcularEdad() + " " + persona.getDireccion());
         System.out.println("Con mostrarDatos despues del setter: ");
         persona.mostrarDatos();
 

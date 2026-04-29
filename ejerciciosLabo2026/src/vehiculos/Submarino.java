@@ -1,18 +1,19 @@
 package vehiculos;
 
-public class Submarino {
-    private String nombre;
+public class Submarino extends Vehiculo {
     private int profundidadMax;
     private int profundidadAct;
 
     public Submarino(){
-        this.nombre = "Kosatska";
+       super("Kosatska");
         this.profundidadMax = 1000;
         this.profundidadAct = 0;
     }
 
-    public String getNombre() {
-        return nombre;
+    public Submarino(String modelo, int profundidadAct, int profundidadMax) {
+        super(modelo);
+        this.profundidadAct = profundidadAct;
+        this.profundidadMax = profundidadMax;
     }
 
     public int getProfundidadMax() {
@@ -23,9 +24,6 @@ public class Submarino {
         return profundidadAct;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
 
     public void setProfundidadMax(int profundidadMax) {
         this.profundidadMax = profundidadMax;
@@ -61,7 +59,7 @@ public class Submarino {
 
     public static void main(String[] args) {
         Submarino submarino = new Submarino();
-        System.out.println("Getters: " + submarino.getNombre() + " " + submarino.getProfundidadAct() + " " + submarino.getProfundidadMax());
+        System.out.println("Getters: " + submarino.getModelo() + " " + submarino.getProfundidadAct() + " " + submarino.getProfundidadMax());
         submarino.sumergir(1001);
         submarino.emerger(10);
         submarino.sumergir(800);

@@ -1,46 +1,19 @@
 package colegios;
 
+import humanos.Persona;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Alumno {
-    private String nombre;
-    private String apellido;
-    private LocalDate fecha_de_nacimiento;
+public class Alumno extends Persona {
     private ArrayList<Float> notas;
     private ArrayList<Materia> materias;
 
 public Alumno(){
-    this.nombre = "ricky";
-    this.apellido = "ciaschini";
-    this.fecha_de_nacimiento = LocalDate.of(2009,4,16);
+    super("ricky","ciaschini",LocalDate.of(2009,4,16));
     this.notas= new ArrayList<>();
     this.materias = new ArrayList<>();
 }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getApellido() {
-        return apellido;
-    }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
-
-    public LocalDate getFecha_de_nacimiento() {
-        return fecha_de_nacimiento;
-    }
-
-    public void setFecha_de_nacimiento(LocalDate fecha_de_nacimiento) {
-        this.fecha_de_nacimiento = fecha_de_nacimiento;
-    }
 
     public ArrayList<Float> getNotas() {
         return notas;

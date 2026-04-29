@@ -2,6 +2,7 @@ package introduccionArrayList;
 
 import humanos.Persona;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class IntroduccionArrayLists {
@@ -39,15 +40,15 @@ public class IntroduccionArrayLists {
         }
 
         /*1.c*/
-        personas.add(new Persona("Ricqui",2,"Peru 535"));
-        personas.add(new Persona("Sezta",50,"Aizpurua 3377"));
-        personas.add(new Persona("Digiovanni",67,"Mosconi 6767"));
-        personas.add(new Persona("LetalForce",90,"Ladiness 2842"));
-        personas.add(new Persona("Papas",45,"Constituyentes 5880"));
+        personas.add(new Persona("Ricqui", LocalDate.of(2000,10,10),"Peru 535"));
+        personas.add(new Persona("Sezta",LocalDate.of(2000,10,10),"Aizpurua 3377"));
+        personas.add(new Persona("Digiovanni",LocalDate.of(2000,10,10),"Mosconi 6767"));
+        personas.add(new Persona("LetalForce",LocalDate.of(2000,10,10),"Ladiness 2842"));
+        personas.add(new Persona("Papas",LocalDate.of(2000,10,10),"Constituyentes 5880"));
 
         System.out.println("Personas con mas de 30 años:");
         for (Persona persona : personas){
-            if (persona.getEdad() > 30){
+            if (persona.calcularEdad() > 30){
 
                 persona.mostrarDatos();
             }
