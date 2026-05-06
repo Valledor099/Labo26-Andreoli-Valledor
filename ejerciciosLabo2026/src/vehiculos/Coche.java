@@ -8,9 +8,8 @@ public class Coche extends Vehiculo{
     private boolean descapotable;
 
     public Coche(String marca, String modelo, String color, int cantRuedas, LocalDate aniofabricacion, String patente, boolean descapotable){
-        super(marca, modelo, color, cantRuedas, aniofabricacion);
+        super(marca, modelo, color, cantRuedas, aniofabricacion, patente);
         this.velocidad = 0;
-        this.patente = patente;
         this.descapotable = descapotable;
     }
 
@@ -28,14 +27,6 @@ public class Coche extends Vehiculo{
 
     public void setDescapotable(boolean descapotable) {
         this.descapotable = descapotable;
-    }
-
-    public String getPatente() {
-        return patente;
-    }
-
-    public void setPatente(String patente) {
-        this.patente = patente;
     }
 
     public void acelerar(){

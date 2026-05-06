@@ -8,17 +8,35 @@ public class Vehiculo {
     private String color;
     private int cantRuedas;
     private LocalDate anioFabricacion;
+    private String patente;
 
-    public Vehiculo(String marca, String modelo, String color, int cantRuedas, LocalDate anioFabricacion) {
+    public Vehiculo(String marca, String modelo, String color, int cantRuedas, LocalDate anioFabricacion, String patente) {
         this.marca = marca;
         this.modelo = modelo;
         this.color = color;
         this.cantRuedas = cantRuedas;
         this.anioFabricacion = anioFabricacion;
+        this.patente = patente;
+    }
+
+    public Vehiculo(String marca, String modelo, String color, LocalDate anioFabricacion, int cantRuedas) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.color = color;
+        this.anioFabricacion = anioFabricacion;
+        this.cantRuedas = cantRuedas;
     }
 
     public Vehiculo(String modelo) {
         this.modelo = modelo;
+    }
+
+    public String getPatente() {
+        return patente;
+    }
+
+    public void setPatente(String patente) {
+        this.patente = patente;
     }
 
     public int getCantRuedas() {
