@@ -1,6 +1,6 @@
 package formasGeometricas;
 
-public class Rectangulo {
+public class Rectangulo extends Forma{
     private int base;
     private int altura;
 
@@ -26,13 +26,15 @@ public class Rectangulo {
     }
 
 
-    public int calcularArea(){
+    @Override
+    public int calcularArea() {
         int area;
         area = base * altura;
         return area;
     }
 
-    public int calcularPerimetro(){
+    @Override
+    public int calcularPerimetro() {
         int perimetro;
         perimetro = 2 * (base + altura);
         return perimetro;

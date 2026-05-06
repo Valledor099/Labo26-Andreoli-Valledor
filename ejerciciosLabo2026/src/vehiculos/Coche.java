@@ -1,11 +1,41 @@
 package vehiculos;
 
+import java.time.LocalDate;
+
 public class Coche extends Vehiculo{
     private int velocidad;
+    private String patente;
+    private boolean descapotable;
 
-    public Coche(String marca, String modelo, String color){
-        super(marca, modelo, color);
+    public Coche(String marca, String modelo, String color, int cantRuedas, LocalDate aniofabricacion, String patente, boolean descapotable){
+        super(marca, modelo, color, cantRuedas, aniofabricacion);
         this.velocidad = 0;
+        this.patente = patente;
+        this.descapotable = descapotable;
+    }
+
+    public int getVelocidad() {
+        return velocidad;
+    }
+
+    public void setVelocidad(int velocidad) {
+        this.velocidad = velocidad;
+    }
+
+    public boolean isDescapotable() {
+        return descapotable;
+    }
+
+    public void setDescapotable(boolean descapotable) {
+        this.descapotable = descapotable;
+    }
+
+    public String getPatente() {
+        return patente;
+    }
+
+    public void setPatente(String patente) {
+        this.patente = patente;
     }
 
     public void acelerar(){
@@ -21,18 +51,8 @@ public class Coche extends Vehiculo{
     }
 
     public static void main(String[] args) {
-        Coche coche = new Coche("lamborghini","Urus", "gris");
-        System.out.println("marca, modelo, color: " + coche.getMarca() + " "+ coche.getModelo()+ " " + coche.getColor());
 
-        coche.setMarca("Porsche");
-        coche.setModelo("911 gt-rs 3");
-        coche.setColor("Negro");
 
-        System.out.println("marca, modelo, color: " + coche.getMarca() + " "+ coche.getModelo() +" "+ coche.getColor());
-        coche.acelerar();
-        System.out.println(coche.mostrarVelocidad());
-        coche.frenar();
-        System.out.println(coche.mostrarVelocidad());
     }
 
 }

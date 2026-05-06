@@ -1,18 +1,40 @@
 package vehiculos;
 
+import java.time.LocalDate;
+
 public class Vehiculo {
     private String marca;
     private String modelo;
     private String color;
+    private int cantRuedas;
+    private LocalDate anioFabricacion;
 
-    public Vehiculo(String marca, String modelo, String color) {
+    public Vehiculo(String marca, String modelo, String color, int cantRuedas, LocalDate anioFabricacion) {
         this.marca = marca;
         this.modelo = modelo;
         this.color = color;
+        this.cantRuedas = cantRuedas;
+        this.anioFabricacion = anioFabricacion;
     }
 
     public Vehiculo(String modelo) {
         this.modelo = modelo;
+    }
+
+    public int getCantRuedas() {
+        return cantRuedas;
+    }
+
+    public void setCantRuedas(int cantRuedas) {
+        this.cantRuedas = cantRuedas;
+    }
+
+    public LocalDate getAnioFabricacion() {
+        return anioFabricacion;
+    }
+
+    public void setAnioFabricacion(LocalDate anioFabricacion) {
+        this.anioFabricacion = anioFabricacion;
     }
 
     public String getMarca() {

@@ -3,7 +3,7 @@ package formasGeometricas;
 
 import static java.lang.Math.pow;
 
-public class Circulo {
+public class Circulo extends Forma{
     private double radio;
 
     public Circulo(){
@@ -22,15 +22,18 @@ public class Circulo {
         this.radio = radio;
     }
 
-    public double calcularArea(){
-        double resu;
-        resu = Math.PI * pow(radio,2);
+
+    @Override
+    public int calcularArea() {
+        int resu;
+        resu = (int)(Math.PI * pow(radio,2));
         return resu;
     }
 
-    public double calcularPerimetro(){
-        double resu;
-        resu = 2 * Math.PI * radio;
+    @Override
+    public int calcularPerimetro() {
+        int resu;
+        resu = (int) (2 * Math.PI * radio);
         return resu;
     }
 
