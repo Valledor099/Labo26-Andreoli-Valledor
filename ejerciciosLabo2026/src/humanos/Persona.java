@@ -14,7 +14,12 @@ public class Persona {
         this.direccion = direccion;
     }
 
-    public Persona(String nombre,String apellido ,LocalDate fecha_de_nacimiento){
+    public Persona(String nombre, String apellido) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+    }
+
+    public Persona(String nombre, String apellido , LocalDate fecha_de_nacimiento){
         this.nombre = nombre;
         this.apellido = apellido;
         this.fecha_de_nacimiento = fecha_de_nacimiento;
