@@ -96,18 +96,19 @@ public void cargarCamioneta(int carga, String camioneta){
 
 }
 
-public int cantDescapotable(){
+public float promDescapotable(){
 
-  int cont = 0;
+  float cont = 0, totalCoches = 0;
 
   for (Vehiculo v1 : Lista) {
-        if (v1.getClass()== Coche.class){
-            if (((Coche) v1).isDescapotable())
-                cont+=1;
-            }
+      if (v1.getClass() == Coche.class) {
+          if (((Coche) v1).isDescapotable()) {
+              cont += 1;
+          }
+        totalCoches+=1;
+      }
   }
-
-  return cont;
+  return cont / totalCoches;
   }
 
 
@@ -131,7 +132,7 @@ public static void main(String[] args) {
 
     System.out.println("Mas vehiculos en la empresa:" + empresa.masTipo() );
     empresa.cargarCamioneta(150,"HJK-192");
-    System.out.println("Cantidad de descapotables:" + empresa.cantDescapotable());
+    System.out.println("Promedio de descapotables:" + empresa.promDescapotable());
 
 }
 
