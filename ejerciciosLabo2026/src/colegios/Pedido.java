@@ -65,7 +65,7 @@ public class Pedido {
 
         if (persona.getClass().equals(Profesor.class)){
         Profesor profesor = (Profesor) persona;
-        precio=profesor.precioDesc(precio);
+        precio=profesor.precioDesc(plato.getPrecio());
         }
 
         return precio;

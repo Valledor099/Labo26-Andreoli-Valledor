@@ -19,6 +19,6 @@ public class Profesor extends Persona {
     }
 
     public int precioDesc(int precio){
-        return precio *(porcentajeDesc/100);
+        return (int)(precio -(precio *((float)(porcentajeDesc)/(float) (100))));
     }
 }
