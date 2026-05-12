@@ -82,8 +82,55 @@ public class Buffet {
             }
         }
     }
+    
+    public void topPlatos(){
 
-    //Falta realizar un top 3 de los platos mas pedidos.
+        int cont1=0,cont2=0,cont3=0;
+        Plato top1=null,top2=null,top3=null;
+
+        for(Plato plato: this.menu){
+            int cont = 0;
+            for (Pedido pedido: this.pedidos){
+                if (pedido.getPlato().equals(plato)){
+                    cont+=1;
+                }
+            }
+
+            if (cont>cont1){
+                cont3=cont2;
+                top3=top2;
+
+                cont2=cont1;
+                top2=top1;
+
+                cont1=cont;
+                top1=plato;
+            }
+            else if(cont>cont2){
+                cont3=cont2;
+                top3=top2;
+
+                cont2=cont;
+                top2=plato;
+            }
+            else if(cont>cont3){
+                cont3=cont;
+                top3=plato;
+            }
+        }
+
+        System.out.println("Los platos mas pedidos son: ");
+        if (top1!=null){
+            System.out.println("1- " + top1.getNombre() + " : " + cont1 + " veces");
+        }
+        if (top2!=null){
+            System.out.println("2- " + top2.getNombre() + " : " + cont2 + " veces");
+        }
+        if (top3!=null){
+            System.out.println("3- " + top3.getNombre() + " : " + cont3 + " veces");
+        }
+
+    }
 
     public static void main(String[] args) {
         Buffet buffet = new Buffet();
@@ -104,15 +151,14 @@ public class Buffet {
         Pedido pedido = buffet.crearPedido(LocalDate.now(),plato1,alumno1,LocalTime.now(),false);
         Pedido pedido1 = buffet.crearPedido(LocalDate.now(),plato1,profesor1,LocalTime.now(),false);
 
-
-
-
         buffet.extraerListado(LocalDate.now());
 
         buffet.modificar(100,plato2);
         buffet.eliminar(plato3);
 
         buffet.entregaPedido(pedido1);
+
+        buffet.topPlatos();
 
 
 }
