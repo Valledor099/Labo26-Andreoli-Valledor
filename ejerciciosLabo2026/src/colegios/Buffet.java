@@ -116,6 +116,11 @@ public class Buffet {
             }
         }
 
+      mostrarTop(top1,top2,top3,cont1,cont2,cont3);
+
+    }
+
+    public void mostrarTop(Plato top1, Plato top2, Plato top3, int cont1, int cont2, int cont3){
         System.out.println("Los platos mas pedidos son: ");
         if (top1!=null){
             System.out.println("1- " + top1.getNombre() + " : " + cont1 + " veces");
@@ -126,7 +131,6 @@ public class Buffet {
         if (top3!=null){
             System.out.println("3- " + top3.getNombre() + " : " + cont3 + " veces");
         }
-
     }
 
     public static void main(String[] args) {
