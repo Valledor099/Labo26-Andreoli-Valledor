@@ -5,7 +5,7 @@ import humanos.Persona;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Alumno extends Persona {
+public class Alumno extends PersonaEducativa {
     private ArrayList<Float> notas;
     private ArrayList<Materia> materias;
     private String division;

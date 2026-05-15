@@ -2,23 +2,10 @@ package colegios;
 
 import humanos.Persona;
 
-public class Profesor extends Persona {
-    private int porcentajeDesc;
+public class Profesor extends PersonaEducativa {
 
-    public Profesor(String nombre, String apellido, int porcentajeDesc) {
-        super(nombre, apellido);
-        this.porcentajeDesc = porcentajeDesc;
+    public Profesor(String nombre, String apellido, int descuento) {
+        super(nombre, apellido, descuento);
     }
 
-    public int getPorcentajeDesc() {
-        return porcentajeDesc;
-    }
-
-    public void setPorcentajeDesc(int porcentajeDesc) {
-        this.porcentajeDesc = porcentajeDesc;
-    }
-
-    public int precioDesc(int precio){
-        return (int)(precio -(precio *((float)(porcentajeDesc)/(float) (100))));
-    }
 }

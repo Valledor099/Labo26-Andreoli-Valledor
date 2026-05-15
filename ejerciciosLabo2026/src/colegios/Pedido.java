@@ -8,11 +8,11 @@ import java.time.LocalTime;
 public class Pedido {
     private LocalDate fechaCreacion;
     private Plato plato;
-    private Persona persona;
+    private PersonaEducativa persona;
     private LocalTime horaEntrega;
     private boolean entregado;
 
-    public Pedido(LocalDate fechaCreacion, Plato plato, Persona persona, LocalTime horaEntrega, boolean entregado) {
+    public Pedido(LocalDate fechaCreacion, Plato plato, PersonaEducativa persona, LocalTime horaEntrega, boolean entregado) {
         this.fechaCreacion = fechaCreacion;
         this.plato = plato;
         this.persona = persona;
@@ -36,11 +36,11 @@ public class Pedido {
         this.plato = plato;
     }
 
-    public Persona getPersona() {
+    public PersonaEducativa getPersona() {
         return persona;
     }
 
-    public void setPersona(Persona persona) {
+    public void setPersona(PersonaEducativa persona) {
         this.persona = persona;
     }
 
@@ -63,9 +63,8 @@ public class Pedido {
     public int precioDescuento(){
         int precio=plato.getPrecio();
 
-        if (persona.getClass().equals(Profesor.class)){
-        Profesor profesor = (Profesor) persona;
-        precio=profesor.precioDesc(plato.getPrecio());
+        if (persona.getDescuento() != 0){
+            precio=persona.precioDesc(plato.getPrecio());
         }
 
         return precio;

@@ -62,7 +62,7 @@ public class Buffet {
         }
     }
 
-    public Pedido crearPedido(LocalDate fechaCreacion, Plato plato, Persona persona, LocalTime horaEntrega, boolean entregado) {
+    public Pedido crearPedido(LocalDate fechaCreacion, Plato plato, PersonaEducativa persona, LocalTime horaEntrega, boolean entregado) {
         Pedido pedido = new Pedido(fechaCreacion, plato, persona, horaEntrega, entregado);
         this.pedidos.add(pedido);
         return pedido;
@@ -70,8 +70,6 @@ public class Buffet {
 
     public void entregaPedido(Pedido pedido){
         pedido.setEntregado(true);
-        System.out.println(pedido.getPlato().getNombre() + " entrgado a " + pedido.getPersona().getNombre());
-
     }
 
     public void pedidosPendientes(){
