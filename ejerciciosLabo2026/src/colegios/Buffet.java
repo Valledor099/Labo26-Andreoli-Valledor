@@ -69,10 +69,9 @@ public class Buffet {
     }
 
     public void entregaPedido(Pedido pedido){
-        pedidos.set(pedidos.indexOf(pedido),pedido).setEntregado(true);
+        pedido.setEntregado(true);
         System.out.println(pedido.getPlato().getNombre() + " entrgado a " + pedido.getPersona().getNombre());
-        System.out.println("Pedidos pendientes: ");
-        pedidosPendientes();
+
     }
 
     public void pedidosPendientes(){
@@ -157,6 +156,8 @@ public class Buffet {
         buffet.eliminar(plato3);
 
         buffet.entregaPedido(pedido1);
+        System.out.println("Pedidos pendientes:");
+        buffet.pedidosPendientes();
 
         buffet.topPlatos();
 
