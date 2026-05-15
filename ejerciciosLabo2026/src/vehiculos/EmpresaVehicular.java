@@ -3,10 +3,10 @@ package vehiculos;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Empresa {
+public class EmpresaVehicular {
     private ArrayList<Vehiculo>Lista;
 
-    public Empresa() {
+    public EmpresaVehicular() {
         Lista = new ArrayList<>();
     }
 
@@ -122,7 +122,7 @@ public static void main(String[] args) {
     Coche auto2 = new Coche("Porsche","Cayenne","Gris",4,LocalDate.of(2022,10,4),"FA-432-HA",true);
     Bicicleta bicicleta = new Bicicleta("BMX","freestyle","Azul",2,LocalDate.of(2026,1,1));
 
-    Empresa empresa = new Empresa();
+    EmpresaVehicular empresa = new EmpresaVehicular();
 
     empresa.agregarVehiculo(camion);
     empresa.agregarVehiculo(auto);
