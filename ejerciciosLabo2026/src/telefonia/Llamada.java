@@ -34,4 +34,8 @@ public class Llamada {
     public void setDestino(Empleado destino) {
         this.destino = destino;
     }
+
+    public int calcularCosto(){
+        return 0;
+    }
 }

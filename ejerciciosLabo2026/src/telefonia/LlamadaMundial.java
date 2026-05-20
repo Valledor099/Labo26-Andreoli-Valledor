@@ -26,4 +26,8 @@ public class LlamadaMundial extends Llamada{
         this.franjaHoraria = franjaHoraria;
     }
 
+    @Override
+    public int calcularCosto() {
+        return getDuracion()*4;
+    }
 }
