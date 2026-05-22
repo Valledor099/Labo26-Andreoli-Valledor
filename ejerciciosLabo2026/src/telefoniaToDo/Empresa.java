@@ -111,18 +111,19 @@ public class Empresa {
         int aux;
         Empleado auxEmp;
 
-        for(int i = 0; i< minutosRanking.size()-1; i++){
-            if (minutosRanking.get(i)<minutosRanking.get(i+1)){
-                aux=minutosRanking.get(i+1);
-                auxEmp=empleadosRanking.get(i+1);
+        for (int i = 0; i < minutosRanking.size()-1; i++){
+        for(int j = 0; j< minutosRanking.size()-1-i; j++){
+            if (minutosRanking.get(j)<minutosRanking.get(j+1)){
+                aux=minutosRanking.get(j+1);
+                auxEmp=empleadosRanking.get(j+1);
 
-                minutosRanking.set(i+1,minutosRanking.get(i));
-                empleadosRanking.set(i+1,empleadosRanking.get(i));
+                minutosRanking.set(j+1,minutosRanking.get(j));
+                empleadosRanking.set(j+1,empleadosRanking.get(j));
 
-                minutosRanking.set(i,aux);
-                empleadosRanking.set(i,auxEmp);
+                minutosRanking.set(j,aux);
+                empleadosRanking.set(j,auxEmp);
             }
-        }
+        }}
 
     }
 

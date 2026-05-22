@@ -18,6 +18,7 @@ public class Main {
         // Ana llama a Maria. Como son de paises distintos, se crea una LlamadaInternacional.
         empresa.registrarLlamada(ana, "3333", 3);
         empresa.registrarLlamada(maria,"1111",10);
+        empresa.registrarLlamada(juan,"3333",4);
 
         // No se registra porque el numero no pertenece a ningun empleado cargado.
         boolean seRegistro = empresa.registrarLlamada(ana, "9999", 10);
