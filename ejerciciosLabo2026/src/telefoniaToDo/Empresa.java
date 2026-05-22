@@ -148,7 +148,7 @@ public class Empresa {
 
         for (Llamada llamada : llamadas1){
 
-                System.out.println("-"+llamada.getDestino().getNombreCompleto());
+                System.out.println("-"+llamada.obtenerDetalle());
                 costoTotal+=llamada.calcularCosto();
 
         }
