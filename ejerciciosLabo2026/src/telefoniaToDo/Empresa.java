@@ -142,13 +142,15 @@ public class Empresa {
         // todas las llamadas que haya hecho ese empleado. Luego, mostrar el costo total
 
         double costoTotal = 0;
-        
+        ArrayList<Llamada>llamadas1 = obtenerLlamadasDe(empleado);
+
         System.out.println("LLamadas de: "+ empleado.getNombreCompleto());
-        for (Llamada llamada : llamadas){
-            if (llamada.fueRealizadaPor(empleado)){
+
+        for (Llamada llamada : llamadas1){
+
                 System.out.println("-"+llamada.getDestino().getNombreCompleto());
                 costoTotal+=llamada.calcularCosto();
-            }
+
         }
         System.out.println("Costo Total: " + costoTotal);
 
