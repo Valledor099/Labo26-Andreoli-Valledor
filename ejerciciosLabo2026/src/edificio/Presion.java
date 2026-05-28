@@ -2,9 +2,9 @@ package edificio;
 
 import java.time.Year;
 
-public class Presion extends Sensor{
-    public Presion(boolean estado, int valoReal, Year anioAdquirido) {
-        super(estado, valoReal, 11, anioAdquirido);
+public class Presion extends Simple{
+    public Presion(boolean estado, float valoReal, Year anioAdquirido) {
+        super(estado, 30, anioAdquirido, valoReal);
     }
 
     @Override

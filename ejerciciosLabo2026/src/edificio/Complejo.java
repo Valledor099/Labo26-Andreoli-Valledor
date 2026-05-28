@@ -7,7 +7,7 @@ public class Complejo extends Sensor{
     private ArrayList<Simple> grupo;
 
     public Complejo(boolean estado, int valor_umbral, ArrayList<Simple> grupo) {
-        super(estado, valor_umbral);
+        super(estado, );
         this.grupo = grupo;
     }
 

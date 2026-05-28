@@ -7,6 +7,7 @@ public class Persona {
     private String apellido;
     private LocalDate fecha_de_nacimiento;
     private String direccion;
+    private String numCel;
 
     public Persona(String nombre, LocalDate fecha_de_nacimiento, String direccion) {
         this.nombre = nombre;
@@ -25,7 +26,19 @@ public class Persona {
         this.fecha_de_nacimiento = fecha_de_nacimiento;
     }
 
+    public Persona(String nombre, String apellido, String numCel) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.numCel = numCel;
+    }
 
+    public String getNumCel() {
+        return numCel;
+    }
+
+    public void setNumCel(String numCel) {
+        this.numCel = numCel;
+    }
 
     public String getApellido() {
         return apellido;
