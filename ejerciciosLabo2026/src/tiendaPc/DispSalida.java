@@ -7,7 +7,7 @@ public class DispSalida extends Dispositivos{
     }
 
     @Override
-    public boolean esSalida() {
-        return true;
+    public int esSalida() {
+        return 1;
     }
 }

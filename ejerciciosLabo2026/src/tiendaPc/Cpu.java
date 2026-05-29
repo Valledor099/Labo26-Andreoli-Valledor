@@ -7,7 +7,7 @@ public class Cpu extends Hardware{
     }
 
     @Override
-    public boolean esCPU() {
-        return true;
+    public int esCPU() {
+        return 1;
     }
 }

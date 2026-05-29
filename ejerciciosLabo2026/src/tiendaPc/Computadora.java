@@ -49,15 +49,15 @@ public class Computadora {
         int cantSalida = 0;
 
         for (Componente componente : componentes){
-            if (componente.esCPU()){
-                cantCPU++;
-            }
-            else if(componente.esEntrada()){
-                cantEntrada++;
-            }
-            else if (componente.esSalida()){
-                cantSalida++;
-            }
+
+                cantCPU+=componente.esCPU();
+
+
+                cantEntrada+=componente.esEntrada();
+
+
+                cantSalida+=componente.esSalida();
+
         }
 
         if (cantCPU>0 && cantEntrada>0 && cantSalida>0){
@@ -81,12 +81,11 @@ public class Computadora {
     public String contarDispositivos(){
         int cantEntrada = 0;
         int cantSalida = 0;
+
         for(Componente componente : componentes){
-            if(componente.esSalida()){
-                cantSalida ++;
-            } else if (componente.esEntrada()) {
-                cantEntrada++;
-            }
+                cantSalida+=componente.esSalida();
+                cantEntrada+=componente.esEntrada();
+
         }
 
         return "Salida: " + cantSalida + '\n'

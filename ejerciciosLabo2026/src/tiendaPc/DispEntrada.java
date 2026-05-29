@@ -17,7 +17,7 @@ public class DispEntrada extends Dispositivos{
     }
 
     @Override
-    public boolean esEntrada() {
-        return true;
+    public int esEntrada() {
+        return 1;
     }
 }

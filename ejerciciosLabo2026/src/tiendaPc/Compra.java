@@ -57,7 +57,7 @@ public class Compra {
 
     public String detalleCompra(){
         return "Cliente: " + cliente.mostrarDetalle() + '\n'
-                +"Metodo de Pago: " + metodo.metodo() + '\n'
+                +"Metodo de Pago: " + metodo.metodo()
                 + "--Componentes PC --" + '\n'
                 + computadora.detalleComponentes()
                 + "-------------------" + '\n'

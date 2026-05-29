@@ -45,15 +45,15 @@ public class Componente {
         this.stock = stock;
     }
 
-    public boolean esCPU(){
-        return false;
+    public int esCPU(){
+        return 0;
     }
 
-    public boolean esSalida(){
-        return false;
+    public int esSalida(){
+        return 0;
     }
 
-    public boolean esEntrada(){
-        return false;
+    public int esEntrada(){
+        return 0;
     }
 }
