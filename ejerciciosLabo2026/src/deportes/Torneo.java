@@ -49,7 +49,7 @@ public class Torneo {
 
                 if (partidos.isEmpty() && (!equipo1.equals(equipo2)) || partidos.contains(partido) && (!equipo1.equals(equipo2))){
 
-                    if (!partido.getTurno().isEmpty()){
+                    if (partido.getTurno()!=null){
                         partidos.add(partido);
                         dias +=1;
                     }
@@ -72,13 +72,13 @@ public class Torneo {
         Jugador jugador2 = new Jugador("bbbb","bbb",LocalDate.of(1999,2,4),1);
         Jugador jugador3 = new Jugador("cccc","ccc",LocalDate.of(1999,3,2),1);
         ArrayList<Jugador>lista = new ArrayList<>();
-        ArrayList<String>disp1 = new ArrayList<>();
+        ArrayList<Turno>disp1 = new ArrayList<>();
         lista.add(jugador1);
         lista.add(jugador2);
         lista.add(jugador3);
-        disp1.add("mañana");
-        disp1.add("tarde");
-        disp1.add("noche");
+        disp1.add(Turno.MAÑANA);
+        disp1.add(Turno.TARDE);
+        disp1.add(Turno.NOCHE);
 
         //Equipo 2
         Jugador jugador4 = new Jugador("dddd","ddd", LocalDate.of(1999,10,10),10);
@@ -88,8 +88,8 @@ public class Torneo {
         lista1.add(jugador4);
         lista1.add(jugador5);
         lista1.add(jugador6);
-        ArrayList<String>disp2 = new ArrayList<>();
-        disp2.add("noche");
+        ArrayList<Turno>disp2 = new ArrayList<>();
+        disp2.add(Turno.NOCHE);
 
         Equipo equipo1 = new Equipo("AAA",disp1,jugador1,lista);
         Equipo equipo2 = new Equipo("BBB",disp2,jugador4,lista1);

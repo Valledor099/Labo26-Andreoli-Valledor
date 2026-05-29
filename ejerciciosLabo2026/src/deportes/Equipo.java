@@ -4,22 +4,22 @@ import java.util.ArrayList;
 
 public class Equipo {
     private String nombre;
-    private ArrayList<String> disponibilidad;
+    private ArrayList<Turno> disponibilidad;
     private Jugador capitan;
     private ArrayList<Jugador> lista;
 
-    public Equipo(String nombre ,ArrayList<String> disponibilidad, Jugador capitan, ArrayList<Jugador> lista) {
+    public Equipo(String nombre ,ArrayList<Turno> disponibilidad, Jugador capitan, ArrayList<Jugador> lista) {
         this.nombre = nombre;
         this.disponibilidad = disponibilidad;
         this.capitan = capitan;
         this.lista = lista;
     }
 
-    public ArrayList<String> getDisponibilidad() {
+    public ArrayList<Turno> getDisponibilidad() {
         return disponibilidad;
     }
 
-    public void setDisponibilidad(ArrayList<String> disponibilidad) {
+    public void setDisponibilidad(ArrayList<Turno> disponibilidad) {
         this.disponibilidad = disponibilidad;
     }
 

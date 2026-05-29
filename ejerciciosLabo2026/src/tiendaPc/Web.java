@@ -155,10 +155,12 @@ public class Web {
         pc1.aniadirComponente(monitorSamsung);
 
 
+
         Computadora pc2 = new Computadora();
         pc2.aniadirComponente(cpuIntel);
         pc2.aniadirComponente(mouseLogi);
         pc2.aniadirComponente(hpLaser);
+        
 
         Metodo efectivo = new Efectivo();
         Metodo tarjeta = new Cred_o_Deb(12345678, "Galicia", "Credito");

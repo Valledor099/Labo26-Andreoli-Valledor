@@ -1,0 +1,5 @@
+package libros;
+
+public enum Editoriales {
+    KAPELUSZ,SUDAMERICANA,ATLANTIDA,EL_ATENEO,INTERZONA,SUR,ALIANZA
+}

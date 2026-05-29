@@ -10,7 +10,7 @@ public class Libro {
     private Persona autor;
     private String isbn;
     private int cantDePags;
-    private String editorial;
+    private Editoriales editorial;
     private Fecha fechaDePublicacion;
 
     public Libro(){
@@ -18,11 +18,11 @@ public class Libro {
         this.autor = new Persona("James Clear", LocalDate.of(2000,10,10), "Washington 1234");
         this.isbn = "1234-321";
         this.cantDePags = 400;
-        this.editorial = "Sudamericana";
+        this.editorial = Editoriales.SUDAMERICANA;
         this.fechaDePublicacion= new Fecha();
     }
 
-    public Libro(String titulo, Persona autor, String isbn, int cantDePags, String editorial, Fecha fechaDePublicacion){
+    public Libro(String titulo, Persona autor, String isbn, int cantDePags, Editoriales editorial, Fecha fechaDePublicacion){
         this.titulo = titulo;
         this.autor = autor;
         this.isbn = isbn;
@@ -36,7 +36,7 @@ public class Libro {
         this.autor = autor;
         this.isbn = "4321-123";
         this.cantDePags = cantDePags;
-        this.editorial = "Biblos";
+        this.editorial = Editoriales.ALIANZA;
         this.fechaDePublicacion = fechaDePublicacion;
     }
 
@@ -56,7 +56,7 @@ public class Libro {
         return cantDePags;
     }
 
-    public String getEditorial() {
+    public Editoriales getEditorial() {
         return editorial;
     }
 
@@ -84,7 +84,7 @@ public class Libro {
         this.isbn = isbn;
     }
 
-    public void setEditorial(String editorial) {
+    public void setEditorial(Editoriales editorial) {
         this.editorial = editorial;
     }
 
@@ -94,7 +94,7 @@ public class Libro {
         autor.mostrarDatos();
         System.out.println("ISBN: " + isbn);
         System.out.println("Cant de Paginas: " + cantDePags);
-        System.out.println("Editorial: " + editorial);
+        System.out.println("Editorial: " + editorial.name());
         System.out.print("fecha.Fecha de Publicacion: ");
         fechaDePublicacion.corta();
     }
@@ -108,15 +108,24 @@ public class Libro {
         }
     }
 
+    public void editoriales(){
+        Editoriales[] disponibles = Editoriales.values();
+        for (Editoriales editorial : disponibles){
+            System.out.println(editorial.name());
+        }
+    }
+
     public static void main(String[] args) {
         Libro libro = new Libro();
         Persona autor = new Persona("Mujica Lainez",LocalDate.of(1999,1,1),"dasdasd 1213");
-        Libro libro1 = new Libro("aaa", autor, "123-123",302,"abbc", new Fecha());
+        Libro libro1 = new Libro("aaa", autor, "123-123",302,Editoriales.EL_ATENEO, new Fecha());
         Libro libro2 = new Libro("IT", new Persona("Stephen King",LocalDate.of(2000,10,10),"New York 1232"),500,new Fecha(20,5,2009));
         System.out.println("Getters: " + libro.getTitulo() + libro.getEditorial() + libro.getIsbn() + libro.getAutor().getNombre() + libro.getCantDePags() + libro.getFechaDePublicacion().getDia() + libro.getFechaDePublicacion().getMes() + libro.getFechaDePublicacion().getAnio());
         libro1.setTitulo("Misteriosa Buenos Aires");
         System.out.println("Metodo de mostrar libro:");
         libro2.mostrarInfo();
         libro2.masViejo(libro1);
+
+        libro1.editoriales();
     }
 }
