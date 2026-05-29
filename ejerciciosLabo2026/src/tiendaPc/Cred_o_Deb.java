@@ -42,8 +42,8 @@ public class Cred_o_Deb extends Metodo{
 
     @Override
     public String metodo() {
-        return "numero tarjeta: " + numeroTarjeta +'\n'
-                + "Banco: " + banco+ '\n'
-                + "Tipo: " + cred_o_deb+ '\n';
+        return "Tipo: " + cred_o_deb+ '\n' +
+                "numero tarjeta: " + numeroTarjeta +'\n'
+                + "Banco: " + banco+ '\n';
     }
 }

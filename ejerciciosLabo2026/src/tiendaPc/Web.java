@@ -56,16 +56,20 @@ public class Web {
 
     }
 
-    
     public boolean hayStock(Computadora computadora){
-        boolean hay = true;
 
         for (Componente componente : computadora.getComponentes()){
-            if (componente.getStock() < 1){
-                hay = false;
+            int cont=1;
+            for (Componente componente1 : computadora.getComponentes()){
+                if (componente.equals(componente1)){
+                    cont++;
+                }
+            }
+            if (componente.getStock()< componente.getStock()-cont){
+                return false;
             }
         }
-        return hay;
+        return true;
     }
 
     public void actualizarStock(Computadora computadora){
@@ -130,11 +134,11 @@ public class Web {
         Persona cliente2 = new Persona("Bruno", "Diaz", "2222-2222");
         Persona cliente3 = new Persona("Carla", "Mendez", "3333-3333");
 
-        Cpu cpuAmd = new Cpu("AMD", "Ryzen 5 5600G", 250000F, 3);
-        Cpu cpuIntel = new Cpu("Intel", "i5 12400", 270000F, 2);
-        Teclado tecladoLogi = new Teclado("Logitech", "K120", 15000F, 4, 1,"USB");
-        Mouse mouseLogi = new Mouse("Logitech", "M90", 12000F, 4, 1,"USB");
-        Pantalla monitorSamsung = new Pantalla("Samsung", "T350", 180000F, 2, 2);
+        Cpu cpuAmd = new Cpu("AMD", "Ryzen 7 7800X", 250000F, 3);
+        Cpu cpuIntel = new Cpu("Intel", "i7 13700OL", 270000F, 2);
+        Teclado tecladoLogi = new Teclado("Redragon", "Kumara k552 autumn", 15000F, 4, 1,"USB");
+        Mouse mouseLogi = new Mouse("Razer", "Viper Mini", 120000F, 4, 1,"USB");
+        Pantalla monitorSamsung = new Pantalla("Zowie", "T350", 180000F, 2, 2);
         Impresora hpLaser = new Impresora("HP", "LaserJet", 210000F, 1, 1, "Laser");
 
         sistema.getComponentes().add(cpuAmd);
@@ -166,7 +170,7 @@ public class Web {
         Compra compra2 = sistema.compra(cliente2, tarjeta, pc2);
         Compra compra3 = sistema.compra(cliente3, tarjeta, pc1);
 
-        sistema.mostrarDetalledeCompra(compra1);
+        sistema.mostrarDetalledeCompra(compra2);
 
         System.out.println("Dispositivos de entrada y salida de la PC1: ");
         sistema.cantEntradaySalida(pc1);
