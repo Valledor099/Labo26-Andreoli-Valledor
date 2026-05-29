@@ -6,10 +6,10 @@ import java.util.ArrayList;
 public class Complejo extends Sensor{
     private ArrayList<Simple> grupo;
 
-    public Complejo(boolean estado, int valor_umbral, ArrayList<Simple> grupo) {
-        super(estado, );
-        this.grupo = grupo;
+    public Complejo(boolean estado, int valor_umbral) {
+        super(estado, valor_umbral);
     }
+
 
     public ArrayList<Simple> getGrupo() {
         return grupo;

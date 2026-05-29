@@ -4,11 +4,11 @@ import java.util.ArrayList;
 
 public class Computadora {
     private ArrayList<Componente>componentes;
-    private int precioTot;
+    private float precioTot;
 
-    public Computadora(ArrayList<Componente> componentes, int precioTot) {
-        this.componentes = componentes;
-        this.precioTot = precioTot;
+    public Computadora() {
+        this.componentes = new ArrayList<>();
+        this.precioTot = 0;
     }
 
     public ArrayList<Componente> getComponentes() {
@@ -19,19 +19,78 @@ public class Computadora {
         this.componentes = componentes;
     }
 
-    public int getPrecioTot() {
+    public float getPrecioTot() {
         return precioTot;
     }
 
-    public void setPrecioTot(int precioTot) {
+    public void setPrecioTot(float precioTot) {
         this.precioTot = precioTot;
     }
 
-    public void aniadirComponente(){
-        //TODO: agregar componente al arraylist
+    public void aniadirComponente(Componente componente){
+        componentes.add(componente);
+        this.precioTot = calcularPrecio();
     }
 
-    public void calcularPrecio(){
-        //TODO: calcular precio total
+    public float calcularPrecio(){
+        float total = 0;
+
+        for(Componente componente : componentes){
+            total += componente.getPrecioVenta();
+        }
+
+        return total;
+
     }
+
+    public boolean computadoraValida(){
+        int cantCPU = 0;
+        int cantEntrada = 0;
+        int cantSalida = 0;
+
+        for (Componente componente : componentes){
+            if (componente.esCPU()){
+                cantCPU++;
+            }
+            else if(componente.esEntrada()){
+                cantEntrada++;
+            }
+            else if (componente.esSalida()){
+                cantSalida++;
+            }
+        }
+
+        if (cantCPU>0 && cantEntrada>0 && cantSalida>0){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    public String detalleComponentes(){
+        String detalle = "";
+
+        for (Componente componente : componentes){
+            detalle += "- " + componente.getModelo() + " " + componente.getPrecioVenta() + '\n';
+        }
+
+        return detalle;
+    }
+
+    public String contarDispositivos(){
+        int cantEntrada = 0;
+        int cantSalida = 0;
+        for(Componente componente : componentes){
+            if(componente.esSalida()){
+                cantSalida ++;
+            } else if (componente.esEntrada()) {
+                cantEntrada++;
+            }
+        }
+
+        return "Salida: " + cantSalida + '\n'
+                + "Entrada: " + cantEntrada;
+    }
+
 }

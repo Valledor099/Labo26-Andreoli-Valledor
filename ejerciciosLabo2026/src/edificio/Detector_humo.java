@@ -3,8 +3,8 @@ package edificio;
 import java.time.Year;
 
 public class Detector_humo extends Sensor{
-    public Detector_humo(boolean estado, int valoReal,  Year anioAdquirido) {
-        super(estado, valoReal, 30, anioAdquirido);
+    public Detector_humo(boolean estado, int valor_umbral) {
+        super(estado, valor_umbral);
     }
 
     @Override

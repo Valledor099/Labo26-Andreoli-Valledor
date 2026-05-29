@@ -34,4 +34,16 @@ public class Cred_o_Deb extends Metodo{
     public void setCred_o_deb(String cred_o_deb) {
         this.cred_o_deb = cred_o_deb;
     }
+
+    @Override
+    public float recargo() {
+        return 0.05F;
+    }
+
+    @Override
+    public String metodo() {
+        return "numero tarjeta: " + numeroTarjeta +'\n'
+                + "Banco: " + banco+ '\n'
+                + "Tipo: " + cred_o_deb+ '\n';
+    }
 }

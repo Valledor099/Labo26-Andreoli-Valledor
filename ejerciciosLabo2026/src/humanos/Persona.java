@@ -82,6 +82,11 @@ public class Persona {
         System.out.println(nombre + " " + fecha_de_nacimiento + " " + direccion);
     }
 
+    public String mostrarDetalle(){
+        return nombre + " " + apellido
+                + " celular: " + numCel;
+    }
+
     public static void main(String[] args) {
         Persona persona = new Persona("RIKY",LocalDate.of(2000,10,10),"Aizpurua 3399");
         System.out.println("Con sout y getters: " + persona.getNombre() + " " + persona.getFecha_de_nacimiento() + " " + persona.getDireccion());

@@ -6,11 +6,22 @@ public class Compra {
     private Persona cliente;
     private Metodo metodo;
     private Computadora computadora;
+    private Float precio;
 
     public Compra(Persona cliente, Metodo metodo, Computadora computadora) {
         this.cliente = cliente;
         this.metodo = metodo;
         this.computadora = computadora;
+        this.precio = agegarRecargo();
+
+    }
+
+    public Float getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(Float precio) {
+        this.precio = precio;
     }
 
     public Computadora getComputadora() {
@@ -38,13 +49,21 @@ public class Compra {
     }
 
 
-    public void chequearCompra(){
-        //TODO: ver si la computadora tiene como minimo una CPU, un disp de entrada y uno de salida
+    public float agegarRecargo(){
+        float recargo = computadora.getPrecioTot() * metodo.recargo();
 
+        return computadora.getPrecioTot() + recargo;
     }
 
-    public void agegarRecargo(){
-        //TODO: revisar si es efectivo o deb_o_cred y agregarles el recargo
+    public String detalleCompra(){
+        return "Cliente: " + cliente.mostrarDetalle() + '\n'
+                +"Metodo de Pago: " + metodo.metodo() + '\n'
+                + "--Componentes PC --" + '\n'
+                + computadora.detalleComponentes()
+                + "-------------------" + '\n'
+                + "Subtotal: $" + computadora.calcularPrecio() + '\n'
+                + "Recargo: " + (metodo.recargo() * 100) + "%" + '\n'
+                + "Total: $" + precio + '\n';
     }
 
 

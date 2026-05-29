@@ -1,12 +1,24 @@
 package tiendaPc;
 
+import humanos.Persona;
+
 import java.util.ArrayList;
 
 public class Web {
     private ArrayList<Compra>compras;
+    private ArrayList<Componente>componentes;
 
-    public Web(ArrayList<Compra> compras) {
-        this.compras = compras;
+    public Web() {
+        this.compras = new ArrayList<>();
+        this.componentes = new ArrayList<>();
+    }
+
+    public ArrayList<Componente> getComponentes() {
+        return componentes;
+    }
+
+    public void setComponentes(ArrayList<Componente> componentes) {
+        this.componentes = componentes;
     }
 
     public ArrayList<Compra> getCompras() {
@@ -17,15 +29,151 @@ public class Web {
         this.compras = compras;
     }
 
-    public void actualizarStock(){
-        //TODO: actualizar el stock de los productos comprados
+    public void actualizarPrecioComponente(int aumento, Componente componente){
+        float porcentaje = componente.getPrecioVenta() * ((float) aumento /100);
+
+        componente.setPrecioVenta(componente.getPrecioVenta() + porcentaje);
     }
 
-    public void calcularMasVendido(){
-        //TODO: calcular componente mas vendido
+    public Compra compra(Persona persona, Metodo metodo, Computadora computadora){
+        if (computadora.computadoraValida()){
+            if (hayStock(computadora)){
+                Compra compra = new Compra(persona,metodo,computadora);
+                actualizarStock(computadora);
+                compras.add(compra);
+                return compra;
+            }
+            else {
+                System.out.println("No hay stock suficiente en la tienda");
+            }
+        }
+        else {
+            System.out.println("Le faltan componentes a la computadora");
+        }
+
+        return null;
+
+
     }
 
-    public void mostrarDetalledeCompra(){
-        //TODO: dada una compra mostrar el detalle de esta con subtotal, recargo(si tiene) y total
+    
+    public boolean hayStock(Computadora computadora){
+        boolean hay = true;
+
+        for (Componente componente : computadora.getComponentes()){
+            if (componente.getStock() < 1){
+                hay = false;
+            }
+        }
+        return hay;
     }
+
+    public void actualizarStock(Computadora computadora){
+        for (Componente componente : computadora.getComponentes()){
+            componente.setStock(componente.getStock() - 1);
+        }
+    }
+
+    public Componente calcularMasVendido(){
+        int cont1 = 0;
+        Componente top1 = null;
+
+        for(Componente componente : componentes){
+            int cont = 0;
+            for(Compra compra : compras){
+
+                if (compra.getComputadora().getComponentes().contains(componente)){
+                    cont ++;
+                }
+
+            }
+
+            if (cont > cont1){
+                cont1 = cont;
+                top1 = componente;
+            }
+
+        }
+        return top1;
+    }
+
+    public void cantEntradaySalida(Computadora computadora){
+        String cantDisp = "";
+
+        for (Compra compra : compras){
+            if (compra.getComputadora().equals(computadora)){
+                cantDisp = computadora.contarDispositivos();
+            }
+        }
+
+        System.out.println(cantDisp);
+
+    }
+
+
+    public void componenteMasVendido(){
+        if (!compras.isEmpty()){
+        Componente top1 = calcularMasVendido();
+        System.out.println("El componente mas vendido es: " + top1.getModelo());
+        }
+    }
+
+
+    public void mostrarDetalledeCompra(Compra compra){
+        System.out.println(compra.detalleCompra());
+    }
+
+    public static void main(String[] args) {
+        Web sistema = new Web();
+
+        Persona cliente1 = new Persona("Ana", "Lopez", "1111-1111");
+        Persona cliente2 = new Persona("Bruno", "Diaz", "2222-2222");
+        Persona cliente3 = new Persona("Carla", "Mendez", "3333-3333");
+
+        Cpu cpuAmd = new Cpu("AMD", "Ryzen 5 5600G", 250000F, 3);
+        Cpu cpuIntel = new Cpu("Intel", "i5 12400", 270000F, 2);
+        Teclado tecladoLogi = new Teclado("Logitech", "K120", 15000F, 4, 1,"USB");
+        Mouse mouseLogi = new Mouse("Logitech", "M90", 12000F, 4, 1,"USB");
+        Pantalla monitorSamsung = new Pantalla("Samsung", "T350", 180000F, 2, 2);
+        Impresora hpLaser = new Impresora("HP", "LaserJet", 210000F, 1, 1, "Laser");
+
+        sistema.getComponentes().add(cpuAmd);
+        sistema.getComponentes().add(cpuIntel);
+        sistema.getComponentes().add(tecladoLogi);
+        sistema.getComponentes().add(mouseLogi);
+        sistema.getComponentes().add(monitorSamsung);
+        sistema.getComponentes().add(hpLaser);
+
+
+        Computadora pc1 = new Computadora();
+        pc1.aniadirComponente(cpuAmd);
+        pc1.aniadirComponente(tecladoLogi);
+        pc1.aniadirComponente(monitorSamsung);
+
+
+        Computadora pc2 = new Computadora();
+        pc2.aniadirComponente(cpuIntel);
+        pc2.aniadirComponente(mouseLogi);
+        pc2.aniadirComponente(hpLaser);
+
+        Metodo efectivo = new Efectivo();
+        Metodo tarjeta = new Cred_o_Deb(12345678, "Galicia", "Credito");
+
+        System.out.println("Precio total PC1: " + pc1.calcularPrecio());
+        System.out.println("Precio total PC2: " + pc2.calcularPrecio());
+
+        Compra compra1 = sistema.compra(cliente1, efectivo, pc1);
+        Compra compra2 = sistema.compra(cliente2, tarjeta, pc2);
+        Compra compra3 = sistema.compra(cliente3, tarjeta, pc1);
+
+        sistema.mostrarDetalledeCompra(compra1);
+
+        System.out.println("Dispositivos de entrada y salida de la PC1: ");
+        sistema.cantEntradaySalida(pc1);
+
+        sistema.componenteMasVendido();
+
+
+    }
+
 }

@@ -44,4 +44,16 @@ public class Componente {
     public void setStock(int stock) {
         this.stock = stock;
     }
+
+    public boolean esCPU(){
+        return false;
+    }
+
+    public boolean esSalida(){
+        return false;
+    }
+
+    public boolean esEntrada(){
+        return false;
+    }
 }

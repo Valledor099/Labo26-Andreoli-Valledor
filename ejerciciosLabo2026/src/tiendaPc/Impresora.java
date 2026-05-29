@@ -7,4 +7,12 @@ public class Impresora extends DispSalida{
         super(fabricante, modelo, precioVenta, stock, cantPuertos);
         this.metodo = metodo;
     }
+
+    public String getMetodo() {
+        return metodo;
+    }
+
+    public void setMetodo(String metodo) {
+        this.metodo = metodo;
+    }
 }
