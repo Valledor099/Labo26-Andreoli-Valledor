@@ -163,7 +163,7 @@ public class Web {
         
 
         Metodo efectivo = new Efectivo();
-        Metodo tarjeta = new Cred_o_Deb(12345678, "Galicia", "Credito");
+        Metodo tarjeta = new Cred_o_Deb(12345678, "Galicia", Tarjeta.CREDITO);
 
         System.out.println("Precio total PC1: " + pc1.calcularPrecio());
         System.out.println("Precio total PC2: " + pc2.calcularPrecio());

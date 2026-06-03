@@ -5,12 +5,12 @@ import java.time.LocalDate;
 public class Vehiculo {
     private String marca;
     private String modelo;
-    private String color;
+    private Colores color;
     private int cantRuedas;
     private LocalDate anioFabricacion;
     private String patente;
 
-    public Vehiculo(String marca, String modelo, String color, int cantRuedas, LocalDate anioFabricacion, String patente) {
+    public Vehiculo(String marca, String modelo, Colores color, int cantRuedas, LocalDate anioFabricacion, String patente) {
         this.marca = marca;
         this.modelo = modelo;
         this.color = color;
@@ -19,7 +19,7 @@ public class Vehiculo {
         this.patente = patente;
     }
 
-    public Vehiculo(String marca, String modelo, String color, LocalDate anioFabricacion, int cantRuedas) {
+    public Vehiculo(String marca, String modelo, Colores color, LocalDate anioFabricacion, int cantRuedas) {
         this.marca = marca;
         this.modelo = modelo;
         this.color = color;
@@ -71,11 +71,11 @@ public class Vehiculo {
         this.modelo = modelo;
     }
 
-    public String getColor() {
+    public Colores getColor() {
         return color;
     }
 
-    public void setColor(String color) {
+    public void setColor(Colores color) {
         this.color = color;
     }
 }

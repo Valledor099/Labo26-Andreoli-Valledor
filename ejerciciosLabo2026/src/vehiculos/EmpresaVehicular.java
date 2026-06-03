@@ -116,11 +116,13 @@ public float promDescapotable(){
 
 public static void main(String[] args) {
 
-    Camioneta camion = new Camioneta("Toyota","Hilux","Rojo",4, LocalDate.of(1999,10,10),"HJK-192",100);
-    Coche auto = new Coche("Porsche","Cayenne","Negro",4,LocalDate.of(2020,10,1),"AF-123-KD",false);
-    Coche auto1 = new Coche("Porsche","Cayenne","Negro",4,LocalDate.of(2020,10,1),"AF-123-KD",false);
-    Coche auto2 = new Coche("Porsche","Cayenne","Gris",4,LocalDate.of(2022,10,4),"FA-432-HA",true);
-    Bicicleta bicicleta = new Bicicleta("BMX","freestyle","Azul",2,LocalDate.of(2026,1,1));
+    Camioneta camion = new Camioneta("Toyota","Hilux",Colores.ROJO,4, LocalDate.of(1999,10,10),"HJK-192",100);
+    Coche auto = new Coche("Porsche","Cayenne",Colores.BLANCO,4,LocalDate.of(2020,10,1),"AF-123-KD",false);
+    Coche auto1 = new Coche("Porsche","Cayenne",Colores.NEGRO,4,LocalDate.of(2020,10,1),"AF-123-KD",false);
+    Coche auto2 = new Coche("Porsche","Cayenne",Colores.ROJO,4,LocalDate.of(2022,10,4),"FA-432-HA",true);
+    Bicicleta bicicleta = new Bicicleta("BMX","freestyle",Colores.BLANCO,2,LocalDate.of(2026,1,1));
+
+    System.out.println(auto1.getColor().getHexa());
 
     EmpresaVehicular empresa = new EmpresaVehicular();
 
