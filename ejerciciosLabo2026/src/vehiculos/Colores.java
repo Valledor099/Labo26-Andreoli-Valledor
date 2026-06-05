@@ -13,7 +13,4 @@ public enum Colores {
         return hexa;
     }
 
-    public void setHexa(String hexa) {
-        this.hexa = hexa;
-    }
 }
