@@ -5,13 +5,13 @@ public class Cuadro {
         private String titulo;
         private String pintor;
         private int anioCreacion;
-        private int estadoConservacion;
+        private Estado estadoConservacion;
 
-        public Cuadro(String titulo, String pintor, int anioCreacion, int estadoConservacion) {
+        public Cuadro(String titulo, String pintor, int anioCreacion, Estado estadoConservacion) {
             this.titulo = titulo;
             this.pintor = pintor;
             this.anioCreacion = anioCreacion;
-            this.estadoConservacion = Math.max(1, Math.min(10, estadoConservacion));
+            this.estadoConservacion = estadoConservacion;
         }
 
         public String getTitulo() { return titulo; }
@@ -23,13 +23,13 @@ public class Cuadro {
         public int getAnioCreacion() { return anioCreacion; }
         public void setAnioCreacion(int anioCreacion) { this.anioCreacion = anioCreacion; }
 
-        public int getEstadoConservacion() { return estadoConservacion; }
-        public void setEstadoConservacion(int estadoConservacion) {
-            this.estadoConservacion = Math.max(1, Math.min(10, estadoConservacion));
+        public Estado getEstadoConservacion() { return estadoConservacion; }
+        public void setEstadoConservacion(Estado estadoConservacion) {
+            this.estadoConservacion = estadoConservacion;
         }
 
         public String toString() {
-            return "\"" + titulo + "\" de " + pintor + " (" + anioCreacion + ") - Estado: " + estadoConservacion + "/10";
+            return "\"" + titulo + "\" de " + pintor + " (" + anioCreacion + ") - Estado: " + estadoConservacion.getEstado() + "/10";
         }
     }
 

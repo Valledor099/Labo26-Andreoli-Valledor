@@ -146,7 +146,7 @@ public class Buffet {
         buffet.aniadir(plato3);
         buffet.aniadir(plato4);
 
-        Alumno alumno1= new Alumno("alumno", "BBB", "A");
+        Alumno alumno1= new Alumno("alumno", "BBB", Division.A);
         Profesor profesor1 = new Profesor("profesor", "CCC", 30);
 
         Pedido pedido = buffet.crearPedido(LocalDate.now(),plato1,alumno1,LocalTime.now(),false);

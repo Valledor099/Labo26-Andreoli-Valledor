@@ -72,7 +72,7 @@ public class Computadora {
         String detalle = "";
 
         for (Componente componente : componentes){
-            detalle += "- " + componente.getModelo() + " " + componente.getPrecioVenta() + '\n';
+            detalle += "- " + componente.getModelo() + " " + componente.getPrecioVenta() + " " +componente.impresion() +'\n';
         }
 
         return detalle;

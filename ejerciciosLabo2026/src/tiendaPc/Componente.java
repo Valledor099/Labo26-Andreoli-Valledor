@@ -56,4 +56,8 @@ public class Componente {
     public int esEntrada(){
         return 0;
     }
+
+    public String impresion(){
+        return "";
+    }
 }

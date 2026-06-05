@@ -139,7 +139,7 @@ public class Web {
         Teclado tecladoLogi = new Teclado("Redragon", "Kumara k552 autumn", 15000F, 4, 1,"USB");
         Mouse mouseLogi = new Mouse("Razer", "Viper Mini", 120000F, 4, 1,"USB");
         Pantalla monitorSamsung = new Pantalla("Zowie", "T350", 180000F, 2, 2);
-        Impresora hpLaser = new Impresora("HP", "LaserJet", 210000F, 1, 1, "Laser");
+        Impresora hpLaser = new Impresora("HP", "LaserJet", 210000F, 1, 1, Inyeccion_Laser.LASER);
 
         sistema.getComponentes().add(cpuAmd);
         sistema.getComponentes().add(cpuIntel);

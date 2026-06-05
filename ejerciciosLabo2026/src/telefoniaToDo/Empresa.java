@@ -105,9 +105,6 @@ public class Empresa {
 
     public void ordenarRankingPorMinutosDescendente(ArrayList<Empleado> empleadosRanking,
                                                      ArrayList<Integer> minutosRanking) {
-        //TODO: Teniendo en cuenta los dos arreglos,
-        // ordenar desde el empleado que tiene mayor cantidad de minutos
-        // al exterior al menor.
         int aux;
         Empleado auxEmp;
 
@@ -131,7 +128,7 @@ public class Empresa {
                                          ArrayList<Integer> minutosRanking) {
 
         System.out.println("Ranking de empleados que mas tiempo llamaron al exterior:");
-        //TODO: Mostrar el ranking ordenado concatenando el empleado con los minutos
+
         for (int i=0;i<empleadosRanking.size();i++){
             System.out.println((i+1) + "- " + empleadosRanking.get(i).getNombreCompleto() + ", minutos totales: " +minutosRanking.get(i));
         }
@@ -139,8 +136,8 @@ public class Empresa {
 
     //mostrar datos
     public void mostrarLlamadasDe(Empleado empleado) {
-       //TODO: Implementar un método que reciba un empleado y muestre
-        // todas las llamadas que haya hecho ese empleado. Luego, mostrar el costo total
+
+
 
         double costoTotal = 0;
         ArrayList<Llamada>llamadas1 = obtenerLlamadasDe(empleado);
@@ -158,7 +155,7 @@ public class Empresa {
     }
 
     public void mostrarTodasLasLlamadas() {
-      //TODO: Ver el detalle de todas las llamadas de la empresa por empleado
+
         for (Empleado empleado : empleados){
             mostrarLlamadasDe(empleado);
         }

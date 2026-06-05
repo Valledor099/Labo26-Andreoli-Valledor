@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class Alumno extends PersonaEducativa {
     private ArrayList<Float> notas;
     private ArrayList<Materia> materias;
-    private String division;
+    private Division division;
 
 public Alumno(){
     super("ricky","ciaschini",LocalDate.of(2009,4,16));
@@ -16,7 +16,7 @@ public Alumno(){
     this.materias = new ArrayList<>();
 }
 
-    public Alumno(String nombre, String apellido, String division) {
+    public Alumno(String nombre, String apellido, Division division) {
         super(nombre, apellido);
         this.division = division;
     }
@@ -33,11 +33,11 @@ public Alumno(){
         this.materias = materias;
     }
 
-    public String getDivision() {
+    public Division getDivision() {
         return division;
     }
 
-    public void setDivision(String division) {
+    public void setDivision(Division division) {
         this.division = division;
     }
 

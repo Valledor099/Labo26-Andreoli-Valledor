@@ -1,8 +1,8 @@
 package telefoniaToDo;
 
 public class LlamadaLocal extends Llamada {
-    private String provinciaOrigen;
-    private String provinciaDestino;
+    private Provincia provinciaOrigen;
+    private Provincia provinciaDestino;
     private double costoPorMinuto;
 
     public LlamadaLocal(Empleado origen, Empleado destino, int duracionMinutos) {
@@ -12,11 +12,11 @@ public class LlamadaLocal extends Llamada {
         this.costoPorMinuto = 10;
     }
 
-    public String getProvinciaOrigen() {
+    public Provincia getProvinciaOrigen() {
         return provinciaOrigen;
     }
 
-    public String getProvinciaDestino() {
+    public Provincia getProvinciaDestino() {
         return provinciaDestino;
     }
 
@@ -26,8 +26,8 @@ public class LlamadaLocal extends Llamada {
 
     public String obtenerDetalle() {
         return super.obtenerDetalle()
-                + " | Provincia origen: " + provinciaOrigen
-                + " | Provincia destino: " + provinciaDestino
+                + " | Provincia origen: " + provinciaOrigen.name()
+                + " | Provincia destino: " + provinciaDestino.name()
                 + " | Llamada local ";
     }
 }

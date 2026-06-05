@@ -4,9 +4,9 @@ public class Main {
     public static void main(String[] args) {
         Empresa empresa = new Empresa("IPM Sistemas");
 
-        Empleado ana = new Empleado("Ana", "Lopez", "111", "Argentina", "1111", "Buenos Aires", "+54", "GMT-3");
-        Empleado juan = new Empleado("Juan", "Perez", "222", "Argentina", "2222", "Cordoba", "+54", "GMT-3");
-        Empleado maria = new Empleado("Maria", "Silva", "333", "Uruguay", "3333", "Montevideo", "+598", "GMT-3");
+        Empleado ana = new Empleado("Ana", "Lopez", "111", "Argentina", "1111", Provincia.BUENOS_AIRES, "+54", "GMT-3");
+        Empleado juan = new Empleado("Juan", "Perez", "222", "Argentina", "2222", Provincia.CHACO, "+54", "GMT-3");
+        Empleado maria = new Empleado("Maria", "Silva", "333", "Uruguay", "3333", Provincia.MONTEVIDEO, "+598", "GMT-3");
 
         empresa.agregarEmpleado(ana);
         empresa.agregarEmpleado(juan);

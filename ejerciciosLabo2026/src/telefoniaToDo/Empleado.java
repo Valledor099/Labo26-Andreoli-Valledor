@@ -2,12 +2,12 @@ package telefoniaToDo;
 
 public class Empleado extends Persona {
     private String telefono;
-    private String provincia;
+    private Provincia provincia;
     private String codigoPais;
     private String franjaHoraria;
 
     public Empleado(String nombre, String apellido, String dni, String pais,
-                    String telefono, String provincia, String codigoPais, String franjaHoraria) {
+                    String telefono, Provincia provincia, String codigoPais, String franjaHoraria) {
         super(nombre, apellido, dni, pais);
         this.telefono = telefono;
         this.provincia = provincia;
@@ -19,8 +19,24 @@ public class Empleado extends Persona {
         return telefono;
     }
 
-    public String getProvincia() {
+    public Provincia getProvincia() {
         return provincia;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public void setProvincia(Provincia provincia) {
+        this.provincia = provincia;
+    }
+
+    public void setCodigoPais(String codigoPais) {
+        this.codigoPais = codigoPais;
+    }
+
+    public void setFranjaHoraria(String franjaHoraria) {
+        this.franjaHoraria = franjaHoraria;
     }
 
     public String getCodigoPais() {

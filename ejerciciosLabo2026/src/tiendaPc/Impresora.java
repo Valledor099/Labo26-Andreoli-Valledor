@@ -1,18 +1,23 @@
 package tiendaPc;
 
 public class Impresora extends DispSalida{
-    private String metodo;
+    private Inyeccion_Laser metodo;
 
-    public Impresora(String fabricante, String modelo, Float precioVenta, int stock, int cantPuertos, String metodo) {
+    public Impresora(String fabricante, String modelo, Float precioVenta, int stock, int cantPuertos, Inyeccion_Laser metodo) {
         super(fabricante, modelo, precioVenta, stock, cantPuertos);
         this.metodo = metodo;
     }
 
-    public String getMetodo() {
+    public Inyeccion_Laser getMetodo() {
         return metodo;
     }
 
-    public void setMetodo(String metodo) {
+    public void setMetodo(Inyeccion_Laser metodo) {
         this.metodo = metodo;
+    }
+
+    @Override
+    public String impresion() {
+        return metodo.name();
     }
 }

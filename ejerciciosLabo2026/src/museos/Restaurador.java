@@ -16,17 +16,25 @@ public class Restaurador extends Persona {
 
     public String restaurar(Cuadro cuadro) {
         int anioActual = LocalDate.now().getYear();
-        int estadoAntes = cuadro.getEstadoConservacion();
+        Estado estadoAntes = cuadro.getEstadoConservacion();
 
         int antiguedad = anioActual - cuadro.getAnioCreacion();
-        int incremento = (antiguedad > 25) ? 2 : 3;
+        Estado incremento = (antiguedad > 25) ? Estado.DOS : Estado.TRES;
 
-        int nuevoEstado = Math.min(10, estadoAntes + incremento);
-        cuadro.setEstadoConservacion(nuevoEstado);
+        int nuevoEstado = 0;
+
+        if (estadoAntes.getEstado() + incremento.getEstado() < 10) {
+        nuevoEstado =  estadoAntes.getEstado() + incremento.getEstado();
+        }
+        else {
+            nuevoEstado = 9;
+        }
+        Estado[] estados = Estado.values();
+        cuadro.setEstadoConservacion(estados[nuevoEstado]);
 
         return "Restaurador: " + super.getNombre() + " " + super.getApellido() + "\n" +
                 "Cuadro: \"" + cuadro.getTitulo() + "\"\n" +
-                "Estado antes de la restauración: " + estadoAntes + "/10\n" +
+                "Estado antes de la restauración: " + estadoAntes.getEstado() + "/10\n" +
                 "Estado después de la restauración: " + nuevoEstado + "/10";
     }
 
@@ -43,10 +51,10 @@ public class Restaurador extends Persona {
 
     public static void main(String[] args) {
 
-        Cuadro c1 = new Cuadro("La Gioconda",          "Leonardo da Vinci", 1503, 4);
-        Cuadro c2 = new Cuadro("Noche Estrellada",     "Vincent van Gogh",  1889, 6);
-        Cuadro c3 = new Cuadro("Obra Reciente",        "Artista Moderno",   2015, 5);
-        Cuadro c4 = new Cuadro("Cuadro casi perfecto", "Pintor X",          1800, 9);
+        Cuadro c1 = new Cuadro("La Gioconda",          "Leonardo da Vinci", 1503, Estado.CUATRO);
+        Cuadro c2 = new Cuadro("Noche Estrellada",     "Vincent van Gogh",  1889, Estado.SEIS);
+        Cuadro c3 = new Cuadro("Obra Reciente",        "Artista Moderno",   2015, Estado.CINCO);
+        Cuadro c4 = new Cuadro("Cuadro casi perfecto", "Pintor X",          1800, Estado.NUEVE);
 
         Restaurador r1 = new Restaurador(
                 "Laura", "Gómez", "30123456",
