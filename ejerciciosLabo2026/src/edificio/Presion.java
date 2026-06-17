@@ -7,7 +7,11 @@ public class Presion extends Simple{
         super(estado, 30, anioAdquirido, valoReal);
     }
 
-    @Override
+
+    public float valor() {
+        return 0;
+    }
+
     public void dispararAlarma() {
         System.out.println("Sensor de presion activado");
     }

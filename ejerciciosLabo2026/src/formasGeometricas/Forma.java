@@ -1,12 +1,8 @@
 package formasGeometricas;
 
-public class Forma {
+public abstract class Forma {
 
-    public int calcularArea(){
-        return  0;
-    }
+    public abstract int calcularArea();
 
-    public int calcularPerimetro(){
-        return  0;
-    }
+    public abstract int calcularPerimetro();
 }

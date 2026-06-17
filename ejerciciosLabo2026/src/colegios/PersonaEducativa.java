@@ -4,17 +4,13 @@ import humanos.Persona;
 
 import java.time.LocalDate;
 
-public class PersonaEducativa extends Persona {
-    private int descuento;
+public abstract class PersonaEducativa extends Persona {
+    private int descuento ;
+
 
     public PersonaEducativa(String nombre, String apellido, int descuento) {
         super(nombre, apellido);
         this.descuento = descuento;
-    }
-
-    public PersonaEducativa(String nombre, String apellido) {
-        super(nombre, apellido);
-        this.descuento = 0;
     }
 
     public PersonaEducativa(String nombre, String apellido, LocalDate fecha_de_nacimiento) {
@@ -25,7 +21,7 @@ public class PersonaEducativa extends Persona {
         return descuento;
     }
 
-    public void setDescuento(int descuento) {
+    public  void setDescuento(int descuento) {
         this.descuento = descuento;
     }
 

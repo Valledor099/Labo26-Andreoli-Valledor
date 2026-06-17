@@ -20,7 +20,6 @@ public class Complejo extends Sensor{
     }
 
 
-    @Override
     public float valor() {
         int totalUmbral = 0;
         float promedio = 0;
@@ -32,7 +31,7 @@ public class Complejo extends Sensor{
         return promedio;
     }
 
-    @Override
+
     public void dispararAlarma() {
         System.out.println("Se disparo el sensor complejo");
     }

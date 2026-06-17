@@ -1,14 +1,10 @@
 package tiendaPc;
 
-public class Metodo {
+public abstract class Metodo {
 
     public Metodo() {}
 
-    public float recargo(){
-        return 0;
-    }
+    public abstract float recargo();
 
-    public String metodo(){
-        return "";
-    }
+    public abstract String metodo();
 }

@@ -1,6 +1,6 @@
 package electronica;
 
-public class Producto {
+public abstract class Producto {
     private String nombre;
     private Float precio;
     private Seccion seccion;
@@ -29,20 +29,20 @@ public class Producto {
         this.precio = precio;
     }
 
-    public int getStock() {
-        return stock;
-    }
-
-    public void setStock(int stock) {
-        this.stock = stock;
-    }
-
     public Seccion getSeccion() {
         return seccion;
     }
 
     public void setSeccion(Seccion seccion) {
         this.seccion = seccion;
+    }
+
+    public int getStock() {
+        return stock;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
     }
 
     public String detalle(){

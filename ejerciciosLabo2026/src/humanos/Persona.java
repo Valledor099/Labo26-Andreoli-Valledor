@@ -2,7 +2,7 @@ package humanos;
 
 import java.time.LocalDate;
 
-public class Persona {
+public abstract class Persona {
     private String nombre;
     private String apellido;
     private LocalDate fecha_de_nacimiento;
@@ -87,23 +87,6 @@ public class Persona {
                 + " celular: " + numCel;
     }
 
-    public static void main(String[] args) {
-        Persona persona = new Persona("RIKY",LocalDate.of(2000,10,10),"Aizpurua 3399");
-        System.out.println("Con sout y getters: " + persona.getNombre() + " " + persona.getFecha_de_nacimiento() + " " + persona.getDireccion());
-        System.out.println("Con mostrarDatos: ");
-        persona.mostrarDatos();
-
-        persona.setNombre("aaa");
-        persona.setFecha_de_nacimiento(LocalDate.of(2000,10,10));
-        persona.setDireccion("Ladines 2842");
-
-        System.out.println("Con sout y getters despues del setter: " + persona.getNombre() + " " + persona.calcularEdad() + " " + persona.getDireccion());
-        System.out.println("Con mostrarDatos despues del setter: ");
-        persona.mostrarDatos();
-
-
-
-    }
 
 
 }

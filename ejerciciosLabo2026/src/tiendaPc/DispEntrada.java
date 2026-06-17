@@ -1,6 +1,6 @@
 package tiendaPc;
 
-public class DispEntrada extends Dispositivos{
+public abstract class DispEntrada extends Dispositivos{
     private String tipoConector;
 
     public DispEntrada(String fabricante, String modelo, Float precioVenta, int stock, int cantPuertos, String tipoConector) {
@@ -16,8 +16,18 @@ public class DispEntrada extends Dispositivos{
         this.tipoConector = tipoConector;
     }
 
-    @Override
+
+    public int esSalida() {
+        return 0;
+    }
+
+
     public int esEntrada() {
         return 1;
+    }
+
+
+    public String impresion() {
+        return "";
     }
 }

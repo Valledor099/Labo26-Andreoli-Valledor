@@ -1,6 +1,6 @@
 package tiendaPc;
 
-public class Dispositivos extends Componente {
+public abstract class Dispositivos extends Componente {
     private int cantPuertos;
 
     public Dispositivos(String fabricante, String modelo, Float precioVenta, int stock, int cantPuertos) {
@@ -17,4 +17,13 @@ public class Dispositivos extends Componente {
     }
 
 
+    public int esCPU() {
+        return 0;
+    }
+
+    public abstract int esSalida();
+
+    public abstract int esEntrada();
+
+    public abstract String  impresion();
 }

@@ -2,7 +2,7 @@ package edificio;
 
 import java.time.Year;
 
-public class Sensor {
+public abstract class Sensor {
     private boolean estado;
     private int valor_umbral;
 
@@ -27,10 +27,8 @@ public class Sensor {
         this.estado = estado;
     }
 
-    public float valor(){
-        return 0;
-    }
+    public abstract float valor();
 
-    public void dispararAlarma() {}
+    public abstract void dispararAlarma();
 
 }

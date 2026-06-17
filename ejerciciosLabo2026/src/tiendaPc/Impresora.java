@@ -16,7 +16,7 @@ public class Impresora extends DispSalida{
         this.metodo = metodo;
     }
 
-    @Override
+
     public String impresion() {
         return metodo.name();
     }

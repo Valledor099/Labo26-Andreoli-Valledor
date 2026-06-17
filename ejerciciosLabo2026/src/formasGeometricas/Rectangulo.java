@@ -26,14 +26,13 @@ public class Rectangulo extends Forma{
     }
 
 
-    @Override
+
     public int calcularArea() {
         int area;
         area = base * altura;
         return area;
     }
 
-    @Override
     public int calcularPerimetro() {
         int perimetro;
         perimetro = 2 * (base + altura);

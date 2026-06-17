@@ -17,7 +17,7 @@ public Alumno(){
 }
 
     public Alumno(String nombre, String apellido, Division division) {
-        super(nombre, apellido);
+        super(nombre, apellido,0);
         this.division = division;
     }
 

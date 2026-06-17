@@ -130,9 +130,9 @@ public class Web {
     public static void main(String[] args) {
         Web sistema = new Web();
 
-        Persona cliente1 = new Persona("Ana", "Lopez", "1111-1111");
-        Persona cliente2 = new Persona("Bruno", "Diaz", "2222-2222");
-        Persona cliente3 = new Persona("Carla", "Mendez", "3333-3333");
+        Persona cliente1 = new Cliente("Ana", "Lopez", "1111-1111");
+        Persona cliente2 = new Cliente("Bruno", "Diaz", "2222-2222");
+        Persona cliente3 = new Cliente("Carla", "Mendez", "3333-3333");
 
         Cpu cpuAmd = new Cpu("AMD", "Ryzen 7 7800X", 250000F, 3);
         Cpu cpuIntel = new Cpu("Intel", "i7 13700OL", 270000F, 2);

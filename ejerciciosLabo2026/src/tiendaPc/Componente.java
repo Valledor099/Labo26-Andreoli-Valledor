@@ -1,6 +1,6 @@
 package tiendaPc;
 
-public class Componente {
+public abstract class Componente {
     private String fabricante;
     private String modelo;
     private Float precioVenta;
@@ -45,19 +45,11 @@ public class Componente {
         this.stock = stock;
     }
 
-    public int esCPU(){
-        return 0;
-    }
+    public abstract int esCPU();
 
-    public int esSalida(){
-        return 0;
-    }
+    public abstract int esSalida();
 
-    public int esEntrada(){
-        return 0;
-    }
+    public abstract int esEntrada();
 
-    public String impresion(){
-        return "";
-    }
+    public abstract String impresion();
 }

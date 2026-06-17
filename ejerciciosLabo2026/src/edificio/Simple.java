@@ -2,7 +2,7 @@ package edificio;
 
 import java.time.Year;
 
-public class Simple extends Sensor{
+public abstract class Simple extends Sensor{
     private Year anioAdquirido;
     private float valoReal;
 
@@ -24,10 +24,11 @@ public class Simple extends Sensor{
         return valoReal;
     }
 
-    @Override
-    public float valor() {
-        return getValoReal();
-    }
+
+    public abstract float valor();
+
+
+    public abstract void dispararAlarma();
 
     public void setValoReal(float valoReal) {
         this.valoReal = valoReal;

@@ -1,5 +1,6 @@
 package musica;
 
+import humanos.Autor;
 import humanos.Persona;
 
 import java.time.LocalDate;
@@ -55,8 +56,8 @@ public class CD {
     public static void main(String[] args) {
         CD cd = new CD();
         Cancion cancion = new Cancion();
-        Cancion cancion1 = new Cancion("aaa",new Persona("sdas", LocalDate.of(2000,10,10),"ASDdsds"));
-        Cancion cancion2 = new Cancion("bbb",new Persona("El negro tecla",LocalDate.of(2000,10,10),"asdsdLA"));
+        Cancion cancion1 = new Cancion("aaa",new Autor("sdas", LocalDate.of(2000,10,10),"ASDdsds"));
+        Cancion cancion2 = new Cancion("bbb",new Autor("El negro tecla",LocalDate.of(2000,10,10),"asdsdLA"));
 
         cd.agrega(cancion);
         cd.agrega(cancion1);

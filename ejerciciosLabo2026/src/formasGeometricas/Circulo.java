@@ -23,19 +23,18 @@ public class Circulo extends Forma{
     }
 
 
-    @Override
     public int calcularArea() {
         int resu;
         resu = (int)(Math.PI * pow(radio,2));
         return resu;
     }
 
-    @Override
     public int calcularPerimetro() {
         int resu;
         resu = (int) (2 * Math.PI * radio);
         return resu;
     }
+
 
     public static void main(String[] args) {
         Circulo circulo = new Circulo();

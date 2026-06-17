@@ -26,7 +26,7 @@ public class LlamadaLocal extends Llamada{
         this.provinciaDestino = provinciaDestino;
     }
 
-    @Override
+
     public int calcularCosto() {
         return getDuracion()*2;
     }

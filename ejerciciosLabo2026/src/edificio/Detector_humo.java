@@ -2,12 +2,17 @@ package edificio;
 
 import java.time.Year;
 
-public class Detector_humo extends Sensor{
-    public Detector_humo(boolean estado, int valor_umbral) {
-        super(estado, valor_umbral);
+public class Detector_humo extends Simple{
+
+    public Detector_humo(boolean estado, int valor_umbral, Year anioAdquirido, float valoReal) {
+        super(estado, valor_umbral, anioAdquirido, valoReal);
     }
 
-    @Override
+
+    public float valor() {
+        return 0;
+    }
+
     public void dispararAlarma() {
         System.out.println("Llamando a los bomberos");
     }

@@ -1,6 +1,6 @@
 package telefonia;
 
-public class Llamada {
+public abstract class Llamada {
     private Empleado origen;
     private Empleado destino;
     private int duracion;
@@ -35,7 +35,5 @@ public class Llamada {
         this.destino = destino;
     }
 
-    public int calcularCosto(){
-        return 0;
-    }
+    public abstract int calcularCosto();
 }

@@ -82,7 +82,7 @@ public class TiendaElectronica {
     public static void main(String[] args) {
         TiendaElectronica tienda = new TiendaElectronica(new ArrayList<>());
 
-        Producto p1 = new Producto("Cable USB", 15.5f, Seccion.CARGADORES, 50);
+        Producto p1 = new cargaPortatil("Cable USB", 15.5f, Seccion.CARGADORES, 50,3);
         Producto p2 = new cargaPortatil("Power Bank 10k", 99.99f, Seccion.CARGADORES, 20, 3);
         Producto p3 = new Sonido("Parlante BT", 45.0f, Seccion.MULTIMEDIA, 10, true);
         Producto p4 = new Televisor("Smart TV 55", 550.0f, Seccion.MULTIMEDIA, 5, Tecnologia.CUATROK, 3840);

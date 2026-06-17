@@ -4,7 +4,12 @@ public class Efectivo extends Metodo{
 
     public Efectivo() {}
 
-    @Override
+
+    public float recargo() {
+        return 0;
+    }
+
+
     public String metodo() {
         return "Efectivo";
     }
