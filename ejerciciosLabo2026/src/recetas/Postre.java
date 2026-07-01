@@ -7,7 +7,7 @@ private boolean apto_diabetico;
 private int temp_horno;
 
     public Postre(String nombre, ArrayList<String> pasos, Nivel nivel, boolean apto_diabetico, int temp_horno) {
-        super(nombre, pasos, nivel,Tipo.POSTRE);
+        super(nombre, pasos, nivel);
         this.apto_diabetico = apto_diabetico;
         this.temp_horno = temp_horno;
     }
@@ -26,6 +26,11 @@ private int temp_horno;
 
     public void setTemp_horno(int temp_horno) {
         this.temp_horno = temp_horno;
+    }
+
+    @Override
+    public Tipo getTipo() {
+        return Tipo.POSTRE;
     }
 
     @Override

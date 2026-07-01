@@ -6,7 +6,7 @@ public class Entrada extends Plato{
     private Boolean frio;
 
     public Entrada(String nombre, ArrayList<String> pasos, Nivel nivel, Boolean frio) {
-        super(nombre, pasos, nivel,Tipo.ENTRADA);
+        super(nombre, pasos, nivel);
         this.frio = frio;
     }
 
@@ -16,6 +16,11 @@ public class Entrada extends Plato{
 
     public void setTipo(Boolean tipo) {
         this.frio = tipo;
+    }
+
+    @Override
+    public Tipo getTipo() {
+        return Tipo.ENTRADA;
     }
 
     @Override

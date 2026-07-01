@@ -6,22 +6,18 @@ public abstract class Plato {
     private String nombre;
     private ArrayList<String>pasos;
     private Nivel nivel;
-    private Tipo tipo;
 
-    public Plato(String nombre, ArrayList<String> pasos, Nivel nivel,Tipo tipo) {
+
+    public Plato(String nombre, ArrayList<String> pasos, Nivel nivel) {
         this.nombre = nombre;
         this.pasos = pasos;
         this.nivel = nivel;
-        this.tipo = tipo;
+
     }
 
-    public Tipo getTipo() {
-        return tipo;
-    }
+    abstract public Tipo getTipo();
 
-    public void setTipo(Tipo tipo) {
-        this.tipo = tipo;
-    }
+
 
     public String getNombre() {
         return nombre;
@@ -51,7 +47,7 @@ public abstract class Plato {
 
     @Override
     public String toString() {
-        return tipo.name() + ": "+nombre + '\n'
+        return  nombre + '\n'
                 + mostrarPasos()
                 + nivel + '\n';
     }

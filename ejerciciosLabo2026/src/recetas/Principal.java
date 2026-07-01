@@ -7,7 +7,7 @@ public class Principal extends Plato{
     private int nComensales;
 
     public Principal(String nombre, ArrayList<String> pasos, Nivel nivel, int tiempoCoccion, int nComensales) {
-        super(nombre, pasos, nivel, Tipo.PRINCIPAL);
+        super(nombre, pasos, nivel);
         this.tiempoCoccion = tiempoCoccion;
         this.nComensales = nComensales;
     }
@@ -26,6 +26,11 @@ public class Principal extends Plato{
 
     public void setnComensales(int nComensales) {
         this.nComensales = nComensales;
+    }
+
+    @Override
+    public Tipo getTipo() {
+        return Tipo.PRINCIPAL;
     }
 
     @Override
