@@ -87,6 +87,8 @@ public abstract class Persona {
                 + " celular: " + numCel;
     }
 
-
-
+    @Override
+    public String toString() {
+        return nombre + " " + apellido;
+    }
 }

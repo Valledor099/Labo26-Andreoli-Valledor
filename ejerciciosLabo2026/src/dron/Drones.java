@@ -80,6 +80,6 @@ public abstract class Drones {
         double radioTierraKm = 6371;
         return radioTierraKm * c;
     };
-    
+
 
 }
