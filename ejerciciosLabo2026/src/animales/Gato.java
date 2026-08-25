@@ -1,6 +1,6 @@
 package animales;
 
-public class Gato extends Mascotas{
+public class Gato extends Mascota {
 
     public Gato(String nombre, Duenio duenio) {
         super(nombre, duenio,Tipo_Mascota.GATO);

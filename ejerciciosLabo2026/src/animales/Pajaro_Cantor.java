@@ -4,7 +4,7 @@ public class Pajaro_Cantor extends Pajaro{
     private String canto;
 
     public Pajaro_Cantor(String nombre, Duenio duenio, String canto) {
-        super(nombre, duenio);
+        super(nombre, duenio, Tipo_Mascota.PAJARO_CANTOR);
         this.canto = canto;
     }
 

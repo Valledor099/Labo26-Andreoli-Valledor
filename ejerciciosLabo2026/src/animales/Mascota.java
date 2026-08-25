@@ -1,11 +1,11 @@
 package animales;
 
-public abstract class Mascotas {
+public abstract class Mascota {
     private String nombre;
     private Duenio duenio;
     private Tipo_Mascota tipoMascota;
 
-    public Mascotas(String nombre, Duenio duenio, Tipo_Mascota tipoMascota) {
+    public Mascota(String nombre, Duenio duenio, Tipo_Mascota tipoMascota) {
         this.nombre = nombre;
         this.duenio = duenio;
         this.tipoMascota = tipoMascota;
@@ -36,5 +36,16 @@ public abstract class Mascotas {
     public void setTipoMascota(Tipo_Mascota tipoMascota) {
         this.tipoMascota = tipoMascota;
     }
+
+    public boolean esDuenio(String nombreUsuario) {
+        return duenio.getNombre().equals(nombreUsuario);
+    }
+
+
+    public void restarVida() {}
+
+    public void morir() {}
+
+
 }
 

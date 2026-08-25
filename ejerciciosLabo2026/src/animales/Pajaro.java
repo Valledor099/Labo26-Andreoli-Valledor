@@ -1,10 +1,9 @@
 package animales;
 
-public abstract class Pajaro extends Mascotas{
-    private Boolean cantor;
+public abstract class Pajaro extends Mascota {
 
-    public Pajaro(String nombre, Duenio duenio) {
-        super(nombre, duenio,Tipo_Mascota.PAJARO);
+    public Pajaro(String nombre, Duenio duenio, Tipo_Mascota tipoMascota) {
+        super(nombre, duenio, tipoMascota);
     }
 
     @Override
