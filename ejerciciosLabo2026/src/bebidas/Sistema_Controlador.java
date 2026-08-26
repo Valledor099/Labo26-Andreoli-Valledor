@@ -44,15 +44,19 @@ public class Sistema_Controlador {
     public static void main(String[] args) {
         Bebida cocaCola = new Bebida_Azucarada("Coca Cola", 10);
         Bebida agua = new Bebida_Neutra("Agua",0,20);
-        Bebida Nuvo = new Bebida_Alcoholica("Nuvo", 15);
+        Bebida nuvo = new Bebida_Alcoholica("Nuvo", 15);
 
         Persona persona = new Persona("JJJ","KKK","43789817");
         Persona persona1 = new Persona("LLL", "OOO","83924812");
 
-        persona.consumir(Nuvo,20);
-        persona.consumir(agua,1);
+        Consumicion consumicion = new Consumicion(nuvo,20);
+        Consumicion consumicion1 = new Consumicion(agua, 100);
+        Consumicion consumicion2 = new Consumicion(agua,1);
 
-        persona1.consumir(agua,100);
+        persona.consumir(consumicion);
+        persona.consumir(consumicion2);
+
+        persona1.consumir(consumicion1);
 
         System.out.println(persona.hidratacionResultante());
         System.out.println(persona1.hidratacionResultante());

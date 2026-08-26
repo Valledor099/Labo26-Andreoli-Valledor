@@ -18,7 +18,7 @@ public class Sistema_Mascotas {
     }
 
     public String saludar(String nombre_usuario, String nombre_mascota){
-        String saludo = null;
+        String saludo;
         Mascota mascota = obtenerMascota(nombre_mascota);
 
         if (mascota == null) {
@@ -26,53 +26,16 @@ public class Sistema_Mascotas {
         }
 
         else {
-            if (mascota instanceof Pez) {
-                vidaPez(nombre_usuario, (Pez) mascota);
-
-            }
-
-
-            if (mascota.esDuenio(nombre_usuario)) {
-            saludo = mascota.saludar();
-            }
-
-            else if (!(mascota instanceof Pajaro)) {
-                saludo = mascota.saludar().toUpperCase() + "!";
-            }
-            saludo = repetirSaludo_Alegria(saludo, mascota);
+            saludo = mascota.saludar(nombre_usuario);
+            comprobarVidas(mascota);
         }
         return saludo;
     }
 
-    public String repetirSaludo_Alegria(String saludo, Mascota mascota){
-        String saludo_inicial = saludo;
-
-        if (mascota.getFelicidad() > 0){
-        for (int i = 0; i < mascota.getFelicidad() ; i++){
-            saludo = saludo + " " + saludo_inicial;
+    public void comprobarVidas(Mascota mascota){
+        if (!mascota.estaVivo()){
+            mascotaAsociadas.remove(mascota);
         }
-        }
-
-        mascota.bajarFelicidad();
-
-        return saludo;
-    }
-
-    public void vidaPez(String nombreUsuario, Pez pez){
-        if (pez.esDuenio(nombreUsuario)){
-            pez.restarVida();
-        }
-        else {
-            pez.morir();
-        }
-
-        comprobarVidas(pez);
-    }
-
-    public void comprobarVidas(Pez pez){
-            if (pez.getVidas() <= 0){
-                eliminar(pez);
-            }
 
         }
 
@@ -114,13 +77,6 @@ public class Sistema_Mascotas {
         Mascota pajaro1 = sistemaMascotas.alta("cocoLoco", new Duenio("yyy", "ksa"),Tipo_Mascota.PAJARO,false,null);
         Mascota pajaro2 = sistemaMascotas.alta("piquito", new Duenio("ccc","ddd"),Tipo_Mascota.PAJARO,true,"lalala");
         Mascota pez = sistemaMascotas.alta("dory", new Duenio("hhh","jjj"),Tipo_Mascota.PEZ,null,null);
-
-        System.out.println(perro.saludar());
-        System.out.println(gato.saludar());
-        System.out.println(pajaro1.saludar());
-        System.out.println(pajaro2.saludar());
-
-
 
 
         sistemaMascotas.modificar(gato, new Gato("blabla",new Duenio("lala","lala")));

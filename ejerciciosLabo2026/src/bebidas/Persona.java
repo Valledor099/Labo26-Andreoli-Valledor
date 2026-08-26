@@ -4,14 +4,12 @@ import java.util.ArrayList;
 
 public class Persona extends humanos.Persona {
     private String dni;
-    private ArrayList <Bebida> bebidas_consumidas;
-    private ArrayList <Integer> cantidad_consumida;
+    private ArrayList <Consumicion> bebidas_consumidas;
 
     public Persona(String nombre, String apellido, String dni) {
         super(nombre, apellido);
         this.dni = dni;
         this.bebidas_consumidas = new ArrayList<>();
-        this.cantidad_consumida = new ArrayList<>();
     }
 
     public String getDni() {
@@ -22,33 +20,24 @@ public class Persona extends humanos.Persona {
         this.dni = dni;
     }
 
-    public ArrayList<Bebida> getBebidas_consumidas() {
+    public ArrayList<Consumicion> getBebidas_consumidas() {
         return bebidas_consumidas;
     }
 
-    public void setBebidas_consumidas(ArrayList<Bebida> bebidas_consumidas) {
+    public void setBebidas_consumidas(ArrayList <Consumicion> bebidas_consumidas) {
         this.bebidas_consumidas = bebidas_consumidas;
-    }
-
-    public ArrayList<Integer> getCantidad_consumida() {
-        return cantidad_consumida;
-    }
-
-    public void setCantidad_consumida(ArrayList<Integer> cantidad_consumida) {
-        this.cantidad_consumida = cantidad_consumida;
     }
 
     public int hidratacionResultante(){
         int hidratacionTot = 0;
-        for (int i = 0; i<bebidas_consumidas.size();i++){
-            hidratacionTot += (cantidad_consumida.get(i) * bebidas_consumidas.get(i).coeficienteHidratacion());
+        for (Consumicion bebidasConsumida : bebidas_consumidas) {
+            hidratacionTot += bebidasConsumida.hidratatacion();
         }
         return hidratacionTot;
     }
 
-    public void consumir(Bebida bebida, int cantidad){
-        bebidas_consumidas.add(bebida);
-        cantidad_consumida.add(cantidad);
+    public void consumir(Consumicion consumicion){
+        bebidas_consumidas.add(consumicion);
     }
 
     @Override

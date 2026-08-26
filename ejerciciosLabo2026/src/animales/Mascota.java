@@ -3,14 +3,12 @@ package animales;
 public abstract class Mascota {
     private String nombre;
     private Duenio duenio;
-    private Tipo_Mascota tipoMascota;
     private int felicidad;
 
-    public Mascota(String nombre, Duenio duenio,Tipo_Mascota tipoMascota) {
+    public Mascota(String nombre, Duenio duenio) {
         this.nombre = nombre;
         this.duenio = duenio;
         this.felicidad = 0;
-        this.tipoMascota = tipoMascota;
     }
 
     public int getFelicidad() {
@@ -37,24 +35,34 @@ public abstract class Mascota {
         this.duenio = duenio;
     }
 
-    public Tipo_Mascota getTipoMascota() {
-        return tipoMascota;
-    }
-
-    public void setTipoMascota(Tipo_Mascota tipoMascota) {
-        this.tipoMascota = tipoMascota;
-    }
-
     public boolean esDuenio(String nombreUsuario) {
         return duenio.getNombre().equals(nombreUsuario);
     }
 
-    public abstract String saludar();
+    public abstract String saludar(String nombre_usuario);
 
     public void bajarFelicidad(){
         if (this.felicidad > 0){
             this.felicidad--;
         }
+    }
+
+    public String repetirSaludo_Alegria(String saludo){
+        String saludo_inicial = saludo;
+
+        if (felicidad > 0){
+            for (int i = 0; i < felicidad ; i++){
+                saludo = saludo + " " + saludo_inicial;
+            }
+        }
+
+        bajarFelicidad();
+
+        return saludo;
+    }
+
+    public Boolean estaVivo(){
+        return true;
     }
 
     public void restarVida() {}

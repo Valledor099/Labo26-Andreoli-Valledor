@@ -3,12 +3,21 @@ package animales;
 public class Gato extends Mascota {
 
     public Gato(String nombre, Duenio duenio) {
-        super(nombre, duenio,Tipo_Mascota.GATO);
+        super(nombre, duenio);
     }
 
+
     @Override
-    public String saludar() {
-        return "miau";
+    public String saludar(String nombre_usuario) {
+        String saludo;
+        if (esDuenio(nombre_usuario)){
+            saludo = "miau";
+        }
+        else {
+            saludo = "MIAU!";
+        }
+
+        return repetirSaludo_Alegria(saludo);
     }
 
     @Override
