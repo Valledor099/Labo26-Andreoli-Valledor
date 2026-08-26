@@ -10,4 +10,9 @@ public class Gato extends Mascota {
     public String saludar() {
         return "miau";
     }
+
+    @Override
+    public Tipo_Mascota tipoMascota() {
+        return Tipo_Mascota.GATO;
+    }
 }

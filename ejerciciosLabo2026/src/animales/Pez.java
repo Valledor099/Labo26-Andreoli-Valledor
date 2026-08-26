@@ -5,15 +5,11 @@ public class Pez extends Mascota{
 
 
     public Pez(String nombre, Duenio duenio) {
-        super(nombre, duenio, Tipo_Mascota.PEZ);
+        super(nombre, duenio,Tipo_Mascota.PEZ);
         this.vidas = 10;
     }
 
 
-    @Override
-    public String saludar() {
-        return "";
-    }
 
     public int getVidas() {
         return vidas;
@@ -24,8 +20,18 @@ public class Pez extends Mascota{
     }
 
     @Override
+    public String saludar() {
+        return "";
+    }
+
+    @Override
     public void morir() {
         this.vidas = 0;
+    }
+
+    @Override
+    public void alimentar() {
+        this.vidas++;
     }
 
     @Override
@@ -33,8 +39,8 @@ public class Pez extends Mascota{
         this.vidas-=1;
     }
 
-
-    public void alimentar(){
-        this.vidas +=1;
+    @Override
+    public Tipo_Mascota tipoMascota() {
+        return Tipo_Mascota.PEZ;
     }
 }
