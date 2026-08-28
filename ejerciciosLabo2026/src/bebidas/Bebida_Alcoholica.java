@@ -8,8 +8,5 @@ public class Bebida_Alcoholica extends Bebida{
     }
 
 
-    @Override
-    public int coeficienteHidratacion() {
-        return getCoefPositivo()- getCoefNegativo();
-    }
+
 }

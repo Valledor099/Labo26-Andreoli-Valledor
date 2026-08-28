@@ -5,8 +5,5 @@ public class Bebida_Neutra extends Bebida{
         super(nombre, coefNegativo, coefPositivo);
     }
 
-    @Override
-    public int coeficienteHidratacion() {
-        return getCoefPositivo() - getCoefNegativo();
-    }
+
 }

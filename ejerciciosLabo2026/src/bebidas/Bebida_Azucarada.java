@@ -8,8 +8,5 @@ public class Bebida_Azucarada extends Bebida{
         this.cantidad_azucar = cantidad_azucar;
     }
 
-    @Override
-    public int coeficienteHidratacion() {
-        return getCoefPositivo()-getCoefNegativo();
-    }
+
 }

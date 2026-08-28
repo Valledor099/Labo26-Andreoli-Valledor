@@ -35,5 +35,7 @@ public abstract class Bebida {
         this.coefPositivo = coefPositivo;
     }
 
-    public abstract int coeficienteHidratacion();
+    public int coeficienteHidratacion(){
+        return coefPositivo-coefNegativo;
+    }
 }
