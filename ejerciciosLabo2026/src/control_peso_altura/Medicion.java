@@ -24,4 +24,10 @@ public class Medicion {
     public void setPeso(int peso) {
         this.peso = peso;
     }
+
+    @Override
+    public String toString() {
+        return "peso: " + peso + '\n'
+                + "altura: " + altura;
+    }
 }
