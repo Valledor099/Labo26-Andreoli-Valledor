@@ -10,7 +10,7 @@ import java.util.Map;
 public class Sistema_Control {
     private HashSet<Persona> personas;
 
-    public Sistema_Control(Persona persona) {
+    public Sistema_Control() {
         this.personas = new HashSet<>();
     }
 
@@ -127,7 +127,6 @@ public class Sistema_Control {
         return min;
     }
 
-
     public Boolean corroborarFecha(LocalDate fecha1, LocalDate fecha2, Persona persona){
         if (fecha2 == null){
             return persona.getMediciones().containsKey(fecha1);
@@ -136,4 +135,12 @@ public class Sistema_Control {
             return persona.getMediciones().containsKey(fecha1) && persona.getMediciones().containsKey(fecha2);
         }
     }
+
+    public static void main(String[] args) {
+        Persona persona = new Persona("Ricky", "Ciasckschini",LocalDate.of(2000,1,3));
+        Sistema_Control sistemaControl = new Sistema_Control();
+
+        
+    }
+
 }
