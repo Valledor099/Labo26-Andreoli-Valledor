@@ -46,7 +46,6 @@ public class Asistencia_trabajador {
     }
 
     public double porcentajeAsistenciaMensual(Empleado empleado, Month mes, int anio){
-        double porcentaje = 0;
         int cantidadAsistidos = 0;
 
         for (Asistencia asistencia : empleado.getAsistencias()){
