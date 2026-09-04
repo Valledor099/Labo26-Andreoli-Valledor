@@ -55,7 +55,7 @@ public class Asistencia_trabajador {
             }
         }
 
-        return (double) cantidadAsistidos / empleado.getDias_trabajo().size()*4;
+        return (double) cantidadAsistidos / (empleado.getDias_trabajo().size()*4);
     }
 
     public ArrayList<Empleado> empleadosMasOchenta(Month mes, int anio){
