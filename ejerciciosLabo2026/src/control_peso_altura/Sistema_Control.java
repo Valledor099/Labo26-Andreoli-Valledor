@@ -25,18 +25,8 @@ public class Sistema_Control {
         }
     }
 
-    public String conocerPesoAltura(LocalDate fecha, Persona persona){
-        Medicion v;
-
-        for (Map.Entry<LocalDate,Medicion> medicion : persona.getMediciones().entrySet()){
-            if(medicion.getKey().equals(fecha)){
-                v = medicion.getValue();
-                return v.toString();
-            }
-        }
-
-        return "No se encontro esa medicion";
-
+    public Medicion conocerPesoAltura(LocalDate fecha, Persona persona){
+        return persona.getMediciones().get(fecha);
     }
 
     public String promedioMedicionAnio(int anio, Persona persona){
@@ -152,7 +142,7 @@ public class Sistema_Control {
 
         sistema.registrarMedicion(70, 176, LocalDate.of(2025, 3, 10), persona);
 
-        System.out.println(sistema.conocerPesoAltura(LocalDate.of(2025, 6, 15), persona));
+        System.out.println(sistema.conocerPesoAltura(LocalDate.of(2025, 6, 15), persona) );
 
         System.out.println(sistema.conocerPesoAltura(LocalDate.of(2024, 1, 1), persona));
 

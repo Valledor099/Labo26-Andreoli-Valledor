@@ -6,13 +6,14 @@ import java.time.Month;
 import java.time.Year;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 
 public class Asistencia_trabajador {
     private HashMap<Integer, Empleado> empleados;
 
-    public Asistencia_trabajador(HashMap<Integer, Empleado> empleados) {
-        this.empleados = empleados;
+    public Asistencia_trabajador() {
+        this.empleados = new HashMap<>();
     }
 
     public HashMap<Integer, Empleado> getEmpleados() {
@@ -39,8 +40,8 @@ public class Asistencia_trabajador {
 
     }
 
-    public void registrarIngreso(Empleado empleado){
-        Asistencia asistencia = new Asistencia(LocalDate.now(), LocalTime.now());
+    public void registrarIngreso(Empleado empleado, LocalDate dia, LocalTime hora){
+        Asistencia asistencia = new Asistencia(dia, hora);
         empleado.registrarAsistencia(asistencia);
     }
 
@@ -71,5 +72,23 @@ public class Asistencia_trabajador {
 
     public static void main(String[] args) {
 
+        HashSet<DIas_Semana> dIasSemanas = new HashSet<>();
+        dIasSemanas.add(DIas_Semana.LUNES);
+        dIasSemanas.add(DIas_Semana.MARTES);
+        dIasSemanas.add(DIas_Semana.MIERCOLES);
+
+        Empleado empleado = new Empleado("aaa", "bbb",LocalDate.of(2000,4,10),"+546546234", dIasSemanas);
+        Asistencia_trabajador asistenciaTrabajador = new Asistencia_trabajador();
+
+
+        asistenciaTrabajador.agregarEmpleado(empleado);
+
+        asistenciaTrabajador.registrarIngreso(empleado,LocalDate.of(2000,9,10),LocalTime.of(12,45));
+
+        asistenciaTrabajador.registrarIngreso(empleado,LocalDate.of(2000,1,11),LocalTime.of(4,5));
+
+        System.out.println(asistenciaTrabajador.porcentajeAsistenciaMensual(empleado,Month.JANUARY,2000) + '\n');
+        System.out.println(asistenciaTrabajador.buscarEmpleado(1)+ '\n');
+        System.out.println(asistenciaTrabajador.empleadosMasOchenta(Month.JANUARY,2000));
     }
 }
