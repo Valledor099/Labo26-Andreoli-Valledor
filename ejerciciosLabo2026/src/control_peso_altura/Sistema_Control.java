@@ -76,7 +76,7 @@ public class Sistema_Control {
         }
 
         double porcentaje = ((double) (pesoOriginal - pesoNuevo) /pesoOriginal) * 0.1;
-        return "Porcentaje de variacion: " + porcentaje*100 + "%";
+        return "Porcentaje de variacion: " + porcentaje* 100 + "%";
         }
         return "no se encotraron las fechas";
 
@@ -137,10 +137,38 @@ public class Sistema_Control {
     }
 
     public static void main(String[] args) {
-        Persona persona = new Persona("Ricky", "Ciasckschini",LocalDate.of(2000,1,3));
-        Sistema_Control sistemaControl = new Sistema_Control();
 
-        
+        Persona persona = new Persona("AAA", "BBB", LocalDate.of(2008, 5, 10));
+        Sistema_Control sistema = new Sistema_Control();
+
+
+        sistema.registrarMedicion(60, 170, LocalDate.of(2025, 3, 10), persona);
+
+        sistema.registrarMedicion(63, 172, LocalDate.of(2025, 6, 15), persona);
+
+        sistema.registrarMedicion(65, 174, LocalDate.of(2025, 10, 20),persona);
+
+        sistema.registrarMedicion(68, 175, LocalDate.of(2026, 3, 5), persona);
+
+        sistema.registrarMedicion(70, 176, LocalDate.of(2025, 3, 10), persona);
+
+        System.out.println(sistema.conocerPesoAltura(LocalDate.of(2025, 6, 15), persona));
+
+        System.out.println(sistema.conocerPesoAltura(LocalDate.of(2024, 1, 1), persona));
+
+        System.out.println(sistema.promedioMedicionAnio(2025, persona));
+
+
+        System.out.println(sistema.porcentajePesoVariacion(persona, LocalDate.of(2025, 3, 10), LocalDate.of(2026, 3, 5)));
+
+        System.out.println(sistema.porcentajeAlturaCrecimiento(persona, LocalDate.of(2025, 3, 10), LocalDate.of(2026, 3, 5)));
+
+        System.out.println("La fecha con mayor peso fue: " + sistema.fechaMayorPeso(persona));
+
+        System.out.println("La fecha con menor peso fue: " + sistema.fechaMenorPeso(persona));
+
+
+
     }
 
 }
