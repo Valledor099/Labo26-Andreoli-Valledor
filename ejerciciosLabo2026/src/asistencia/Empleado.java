@@ -9,22 +9,15 @@ import java.util.HashSet;
 public class Empleado extends Persona {
     private HashSet<DIas_Semana> dias_trabajo;
     private HashSet<Asistencia> asistencias;
-    private static int numLegajo = 0;
+
 
     public Empleado(String nombre, String apellido, LocalDate fecha_de_nacimiento, String numCel, HashSet<DIas_Semana> dias_trabajo) {
         super(nombre, apellido, fecha_de_nacimiento, numCel);
         this.dias_trabajo = dias_trabajo;
         this.asistencias= new HashSet<>();
-        numLegajo++;
+
     }
 
-    public static int getNumLegajo() {
-        return numLegajo;
-    }
-
-    public static void setNumLegajo(int numLegajo) {
-        Empleado.numLegajo = numLegajo;
-    }
 
     public HashSet<DIas_Semana> getDias_trabajo() {
         return dias_trabajo;

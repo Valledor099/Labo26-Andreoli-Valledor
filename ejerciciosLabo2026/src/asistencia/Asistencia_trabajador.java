@@ -24,11 +24,9 @@ public class Asistencia_trabajador {
         this.empleados = empleados;
     }
 
-    public void agregarEmpleado(Empleado empleado){
-        int nLegajo = Empleado.getNumLegajo();
+    public void agregarEmpleado(Empleado empleado, int nLegajo){
         empleados.put(nLegajo,empleado);
     }
-
 
     public String  buscarEmpleado(int nroLegajo){
 
@@ -80,7 +78,7 @@ public class Asistencia_trabajador {
         Asistencia_trabajador asistenciaTrabajador = new Asistencia_trabajador();
 
 
-        asistenciaTrabajador.agregarEmpleado(empleado);
+        asistenciaTrabajador.agregarEmpleado(empleado,1);
 
         asistenciaTrabajador.registrarIngreso(empleado,LocalDate.of(2000,9,10),LocalTime.of(12,45));
 
