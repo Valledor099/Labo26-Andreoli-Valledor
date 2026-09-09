@@ -37,5 +37,9 @@ public class Plato {
         this.calorias = calorias;
     }
 
-
+    @Override
+    public String toString() {
+        return "Nombre: " + nombre + '\n'
+                + "Calorias: " + calorias;
+    }
 }

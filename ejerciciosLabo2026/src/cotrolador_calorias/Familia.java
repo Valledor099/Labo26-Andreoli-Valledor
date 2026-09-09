@@ -1,5 +1,6 @@
 package cotrolador_calorias;
 
+import java.time.LocalDate;
 import java.util.HashSet;
 
 public class Familia {
@@ -87,6 +88,31 @@ public class Familia {
 
     public static void main(String[] args) {
 
+         IntegrantesFamilia integrante1 = new IntegrantesFamilia("aaa","bbb", LocalDate.of(2000,2,7));
+         IntegrantesFamilia integrante2 = new IntegrantesFamilia("bbb","aaa", LocalDate.of(2000,4,1));
+
+         Plato plato1 = new Plato("queque",200);
+         Plato plato2 = new Plato("mila_con_papas", 400);
+         Plato plato3 = new Plato("Hamburguesa", 1000);
+
+         integrante1.agregar(plato1);
+         integrante2.agregar(plato2);
+         integrante2.agregar(plato1);
+         integrante2.agregar(plato3);
+
+         Familia familia = new Familia();
+
+         familia.agregarIntegrante(integrante1);
+         familia.agregarIntegrante(integrante2);
+
+        System.out.println("Consumio mas calorias: " +familia.masCalorias());
+        System.out.println("Consumio menos calorias: " + familia.menosCalorias());
+        System.out.println("Promedio de calorias en la familia: " +familia.promedioCaloriasFamilia());
+        System.out.println("Persona que consumio el plato: " + familia.platoConsumido(plato1));
+        System.out.println("Plato favorito del integrante: " + familia.platoFavorito(integrante1));
+        System.out.println("Platos distintos de la familia: " + familia.platosDistintos());
+
+        System.out.println("Promedio de calorias del integrante: " + integrante1.promedioCalorias());
     }
 
 }
