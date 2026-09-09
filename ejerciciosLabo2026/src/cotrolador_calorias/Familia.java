@@ -95,15 +95,17 @@ public class Familia {
          Plato plato2 = new Plato("mila_con_papas", 400);
          Plato plato3 = new Plato("Hamburguesa", 1000);
 
-         integrante1.agregar(plato1);
-         integrante2.agregar(plato2);
-         integrante2.agregar(plato1);
-         integrante2.agregar(plato3);
+
 
          Familia familia = new Familia();
 
          familia.agregarIntegrante(integrante1);
          familia.agregarIntegrante(integrante2);
+         
+        familia.registroConsumo(integrante1,plato1);
+        familia.registroConsumo(integrante2,plato2);
+        familia.registroConsumo(integrante2,plato1);
+        familia.registroConsumo(integrante2,plato3);
 
         System.out.println("Consumio mas calorias: " +familia.masCalorias());
         System.out.println("Consumio menos calorias: " + familia.menosCalorias());
