@@ -101,7 +101,7 @@ public class Familia {
 
          familia.agregarIntegrante(integrante1);
          familia.agregarIntegrante(integrante2);
-         
+
         familia.registroConsumo(integrante1,plato1);
         familia.registroConsumo(integrante2,plato2);
         familia.registroConsumo(integrante2,plato1);

@@ -23,6 +23,15 @@ public class Sistema_edificio {
         }
     }
 
+    public String obtenerMasInfo(int numero) throws IndexOutOfBoundsException {
+        if(numero > sensores.size()){
+            throw new IndexOutOfBoundsException(numero);
+        }
+        //Agregar if de numero no entero
+        
+
+    }
+
     public void evaluar(Sensor sensor){
         if(sensor.getValor_umbral() < sensor.valor() && sensor.isEstado() ){
             sensor.dispararAlarma();
