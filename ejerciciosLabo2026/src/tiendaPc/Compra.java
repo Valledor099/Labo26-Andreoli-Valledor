@@ -48,7 +48,6 @@ public class Compra {
         this.metodo = metodo;
     }
 
-
     public float agegarRecargo(){
         float recargo = computadora.getPrecioTot() * metodo.recargo();
 

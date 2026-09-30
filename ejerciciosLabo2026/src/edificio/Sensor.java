@@ -31,4 +31,9 @@ public abstract class Sensor {
 
     public abstract void dispararAlarma();
 
+    @Override
+    public String toString() {
+        return "Estado:" + estado + '\n' +
+                "Valor_umbral: " + valor_umbral + '\n';
+    }
 }
