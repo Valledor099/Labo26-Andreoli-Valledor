@@ -1,6 +1,9 @@
 package tiendaPc;
 
 import humanos.Persona;
+import tiendaPc.componentes.*;
+import tiendaPc.errores.ComputadorNoValidaException;
+import tiendaPc.errores.NoHayStockException;
 
 import java.util.ArrayList;
 
@@ -36,7 +39,7 @@ public class Web {
     }
 
     public Compra compra(Persona persona, Metodo metodo, Computadora computadora){
-        if (computadora.computadoraValida()){
+        /*if (computadora.computadoraValida()){
             if (hayStock(computadora)){
                 Compra compra = new Compra(persona,metodo,computadora);
                 actualizarStock(computadora);
@@ -44,29 +47,38 @@ public class Web {
                 return compra;
             }
             else {
-                System.out.println("No hay stock suficiente en la tienda");
+
             }
         }
         else {
             System.out.println("Le faltan componentes a la computadora");
+        }*/
+
+        try {
+            computadora.computadoraValida();
+            hayStock(computadora);
+            Compra compra = new Compra(persona,metodo,computadora);
+            actualizarStock(computadora);
+            compras.add(compra);
+            return compra;
         }
-
-        return null;
-
-
+        catch (ComputadorNoValidaException | NoHayStockException e){
+            System.out.println(e.getMessage());
+            return null;
+        }
     }
 
-    public boolean hayStock(Computadora computadora){
+    public boolean hayStock(Computadora computadora) throws NoHayStockException {
 
         for (Componente componente : computadora.getComponentes()){
-            int cont=1;
+            int cont=0;
             for (Componente componente1 : computadora.getComponentes()){
                 if (componente.equals(componente1)){
                     cont++;
                 }
             }
-            if (componente.getStock()< componente.getStock()-cont){
-                return false;
+            if (componente.getStock() < cont){
+                throw new NoHayStockException("No hay stock de :" + componente);
             }
         }
         return true;
@@ -151,6 +163,10 @@ public class Web {
 
         Computadora pc1 = new Computadora();
         pc1.aniadirComponente(cpuAmd);
+        pc1.aniadirComponente(cpuAmd);
+        pc1.aniadirComponente(cpuAmd);
+        pc1.aniadirComponente(cpuAmd);
+        pc1.aniadirComponente(cpuAmd);
         pc1.aniadirComponente(tecladoLogi);
         pc1.aniadirComponente(monitorSamsung);
 
@@ -173,6 +189,7 @@ public class Web {
         Compra compra3 = sistema.compra(cliente3, tarjeta, pc1);
 
         sistema.mostrarDetalledeCompra(compra2);
+
 
         System.out.println("Dispositivos de entrada y salida de la PC1: ");
         sistema.cantEntradaySalida(pc1);

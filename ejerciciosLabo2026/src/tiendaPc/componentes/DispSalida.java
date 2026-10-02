@@ -1,4 +1,4 @@
-package tiendaPc;
+package tiendaPc.componentes;
 
 public abstract class DispSalida extends Dispositivos{
 

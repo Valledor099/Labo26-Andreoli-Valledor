@@ -1,4 +1,4 @@
-package tiendaPc;
+package tiendaPc.componentes;
 
 public abstract class Dispositivos extends Componente {
     private int cantPuertos;

@@ -1,4 +1,4 @@
-package tiendaPc;
+package tiendaPc.componentes;
 
 public class Impresora extends DispSalida{
     private Inyeccion_Laser metodo;

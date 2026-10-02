@@ -1,5 +1,8 @@
 package tiendaPc;
 
+import tiendaPc.componentes.Componente;
+import tiendaPc.errores.ComputadorNoValidaException;
+
 import java.util.ArrayList;
 
 public class Computadora {
@@ -43,7 +46,7 @@ public class Computadora {
 
     }
 
-    public boolean computadoraValida(){
+    public boolean computadoraValida() throws ComputadorNoValidaException {
         int cantCPU = 0;
         int cantEntrada = 0;
         int cantSalida = 0;
@@ -52,20 +55,17 @@ public class Computadora {
 
                 cantCPU+=componente.esCPU();
 
-
                 cantEntrada+=componente.esEntrada();
-
 
                 cantSalida+=componente.esSalida();
 
         }
 
-        if (cantCPU>0 && cantEntrada>0 && cantSalida>0){
-            return true;
+        if (cantCPU <= 0 || cantEntrada <= 0 || cantSalida <= 0) {
+            throw new ComputadorNoValidaException("Computadora no valida");
         }
-        else {
-            return false;
-        }
+
+        return true;
     }
 
     public String detalleComponentes(){

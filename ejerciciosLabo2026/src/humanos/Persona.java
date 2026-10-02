@@ -8,6 +8,7 @@ public abstract class Persona {
     private LocalDate fecha_de_nacimiento;
     private String direccion;
     private String numCel;
+    private String DNI;
 
 
     public Persona(String nombre, String apellido, LocalDate fecha_de_nacimiento, String numCel) {
@@ -15,6 +16,12 @@ public abstract class Persona {
         this.apellido = apellido;
         this.fecha_de_nacimiento = fecha_de_nacimiento;
         this.numCel = numCel;
+    }
+
+    public Persona(LocalDate fecha_de_nacimiento, String nombre, String DNI) {
+        this.fecha_de_nacimiento = fecha_de_nacimiento;
+        this.nombre = nombre;
+        this.DNI = DNI;
     }
 
     public Persona(String nombre, LocalDate fecha_de_nacimiento, String direccion) {

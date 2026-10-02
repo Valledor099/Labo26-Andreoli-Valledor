@@ -1,4 +1,4 @@
-package tiendaPc;
+package tiendaPc.componentes;
 
 public class Pantalla extends DispSalida{
     public Pantalla(String fabricante, String modelo, Float precioVenta, int stock, int cantPuertos) {
