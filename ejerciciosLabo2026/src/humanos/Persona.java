@@ -18,6 +18,13 @@ public abstract class Persona {
         this.numCel = numCel;
     }
 
+    public Persona(String nombre, String apellido, String direccion, LocalDate fecha_de_nacimiento) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.direccion = direccion;
+        this.fecha_de_nacimiento = fecha_de_nacimiento;
+    }
+
     public Persona(LocalDate fecha_de_nacimiento, String nombre, String DNI) {
         this.fecha_de_nacimiento = fecha_de_nacimiento;
         this.nombre = nombre;
