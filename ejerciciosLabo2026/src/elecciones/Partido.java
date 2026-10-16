@@ -1,5 +1,6 @@
 package elecciones;
 
+import java.time.LocalDate;
 import java.util.HashSet;
 
 public class Partido {
@@ -51,12 +52,26 @@ public class Partido {
         mensajeros.add(mensajero);
     }
 
-    public void hacerCampaña(){
+    public void hacerCampania(){
         for (Mensajero mensajero : mensajeros){
             mensajero.enviarMensaje("Vote por " + nombre + " para un mejor futuro");
         }
 
     }
 
-    
+
+    public static void main(String[] args) {
+        Partido partido = new Partido("AAA", "dasdas", 2);
+        Telefono telefono = new Telefono("1231232","samsung","dasdas",Compania.CLARO,"+541187821",true,true);
+        Trabajadores trabajadores = new Trabajadores("assadsa","dasdas","dsadasd", LocalDate.now(),"189302",90000,true);
+        Paloma paloma = new Paloma("asdsaad","dasdas","dsad",true);
+
+        partido.agregarMensajero(telefono);
+        partido.agregarMensajero(trabajadores);
+        partido.agregarMensajero(paloma);
+
+        partido.hacerCampania();
+    }
+
+
 }

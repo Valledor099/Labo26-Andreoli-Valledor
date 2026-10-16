@@ -1,6 +1,7 @@
 package intercambio;
 
  public abstract class PrendasRopa {
+
     private String color;
     private Material material;
     private String marca;
