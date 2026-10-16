@@ -1,7 +1,4 @@
-package deportes;
-
-import java.time.LocalDate;
-import java.util.ArrayList;
+package deportes.Curling;
 
 
 public class Partido {

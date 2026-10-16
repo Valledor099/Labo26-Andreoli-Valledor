@@ -1,4 +1,6 @@
-package deportes;
+package deportes.Curling;
+
+import deportes.Jugador;
 
 import java.util.ArrayList;
 

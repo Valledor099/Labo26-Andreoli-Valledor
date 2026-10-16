@@ -10,6 +10,10 @@ public abstract class Persona {
     private String numCel;
     private String DNI;
 
+    public Persona(String nombre, LocalDate fecha_de_nacimiento) {
+        this.nombre = nombre;
+        this.fecha_de_nacimiento = fecha_de_nacimiento;
+    }
 
     public Persona(String nombre, String apellido, LocalDate fecha_de_nacimiento, String numCel) {
         this.nombre = nombre;
