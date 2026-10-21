@@ -2,6 +2,7 @@ package bares_dianas;
 
 import bares_dianas.beneficios.Beneficio;
 import bares_dianas.beneficios.Beneficio_Trago;
+import bares_dianas.beneficios.acumulables.Acumulable;
 import bares_dianas.dianas.Diana;
 
 import java.util.HashSet;
@@ -87,7 +88,7 @@ public class Bar {
     }
 
     public void agregarBeneficio(Beneficio beneficio){
-        if (!(beneficio instanceof Beneficio_Trago)){
+        if (beneficio instanceof Acumulable){
             beneficios_acumulables.add(beneficio);
         }
         beneficios.add(beneficio);
